@@ -7,6 +7,7 @@ import markdown
 
 from frontmatter import Frontmatter
 from bin.govukify import govukify_markdown_output
+from digital_land_frontend.filters import make_link
 
 docs = "docs/"
 
@@ -35,7 +36,10 @@ multi_loader = jinja2.ChoiceLoader(
         ),
     ]
 )
-env = jinja2.Environment(loader=multi_loader)
+env = jinja2.Environment(loader=multi_loader, autoescape=True)
+
+# register jinja filters
+env.filters["make_link"] = make_link
 
 # get templates
 project_template = env.get_template("project.html")
