@@ -1,7 +1,5 @@
 ---
 name: "Heritage assets"
-characteristics:
-    test: "1"
-    a: "2"
+status: "To explore"
 ---
-A description about **heritage assets**.
+We want to explore datasets that will help to build a national picture of heritage assets. We think the following datasets are needed to do this, but this could change
