@@ -32,7 +32,7 @@ characteristics:
 ---
 ```
 
-The allowable `status` values are: **to explore**, **n progress** and **published**.
+The allowable `status` values are: **to explore**, **in progress** and **published**.
 
 You can also add any markdown content after this frontmatter. It will be used as the content in description section of the page.
 
