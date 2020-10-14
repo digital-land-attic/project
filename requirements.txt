@@ -2,7 +2,7 @@ appdirs==1.4.4
 black==20.8b1
 click==7.1.2
 dataclasses==0.7
--e git+https://github.com/digital-land/frontend.git@5adc478d4a72a19205798a60dacc168ccc3fef83#egg=digital_land_frontend
+-e git+https://github.com/digital-land/frontend.git#egg=digital_land_frontend
 frontmatter==3.0.7
 -e git+https://github.com/digital-land/govuk-jinja-components.git@194500e1ab7ad0439736c7689f6031f7613fd379#egg=govuk_jinja_components
 importlib-metadata==2.0.0

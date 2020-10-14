@@ -58,6 +58,7 @@ def get_project_content(filename):
     file_content = Frontmatter.read_file(filename)
     return {
         "name": file_content["attributes"].get("name"),
+        "status": file_content["attributes"].get("status"),
         "characteristics": file_content["attributes"].get("characteristics"),
         "description": compile_markdown(md, file_content["body"]),
     }
