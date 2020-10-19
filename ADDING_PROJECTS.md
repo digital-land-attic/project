@@ -36,6 +36,8 @@ The allowable `status` values are: **to explore**, **in progress** and **publish
 
 You can also add any markdown content after this frontmatter. It will be used as the content in description section of the page.
 
+You should also add the `one-liner` property to the frontmatter. This is a single line description of the project and will be used on the list of projects index page.
+
 ### Add datasets to project
 
 If there are mulitple datasets for a project you should create a `datasets` folder in the project folder. For example the path to the dataset folder will be `/projects/name-of-project/datasets`.
