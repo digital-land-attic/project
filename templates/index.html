@@ -1,0 +1,54 @@
+{% extends "digital-land-frontend/dlf-base.html" %}
+{% from 'digital-land-frontend/components/feedback-panel/macro.html' import dlFeedbackPanel %}
+
+{% block beforeContent %}
+  {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
+  {% block dl_breadcrumbs %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Digital Land",
+        "href": "https://digital-land.github.io/"
+      },
+      {
+        "text": "Projects"
+      }
+    ]
+  }) }}
+  {% endblock %}
+{% endblock %}
+
+{% macro projectListing(project) %}
+<li>
+    <h3 class="govuk-heading-m{{ ' govuk-!-margin-bottom-2' if project.description }}">
+        <a href="{{ project.name|lower|replace(' ', '-') }}" class="govuk-link">{{ project.name }}</a></h3>
+    {%- if project.description %}
+    <p class="govuk-body">{{ project.description }}</p>
+    {% endif -%}
+</li>
+{% endmacro %}
+
+{% block content %}
+<h1 class="govuk-heading-xl">Projects</h1>
+<p class="govuk-body-l">We're collecting and publishing land and housing data to build a national picture of planning.</p>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% for section in ['published', 'in progress', 'to explore'] %}
+        <h2 class="govuk-heading-l">{{ section|capitalize }}</h2>
+        <ul class="govuk-list">
+        {%- for project in projects[section] %}
+            {{ projectListing(project) }} 
+        {% endfor -%}
+        </ul>
+        {% endfor %}
+        
+    </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+{{ dlFeedbackPanel({
+    "title": "Help improve this page",
+    "html": 'If you’ve got a question, idea or suggestion share it with the digital land team on <a href="https://github.com/digital-land/design-system">github</a> or email us on <a href="mailto:DigitalLand@communities.gov.uk">digitalland@communities.gov.uk</a>'
+}) }}
+{% endblock %}

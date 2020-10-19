@@ -42,6 +42,7 @@ env = jinja2.Environment(loader=multi_loader, autoescape=True)
 env.filters["make_link"] = make_link
 
 # get templates
+index_template = env.get_template("index.html")
 project_template = env.get_template("project.html")
 
 project_dir = "projects/"
@@ -82,3 +83,20 @@ for project in projects:
             datasets.append(get_project_content(f"{project_dir}{project}/datasets/{f}"))
         project_content["datasets"] = datasets
     render(f"project/{project}/index.html", project_template, project=project_content)
+
+# generate summary for index page
+summary = {}
+for project in projects:
+    filename = f"{project_dir}{project}/index.md"
+    if os.path.exists(filename):
+        file_content = Frontmatter.read_file(filename)
+        summary.setdefault(file_content["attributes"].get("status").lower(), [])
+        project_summary = {
+            "name": file_content["attributes"].get("name"),
+            "description": file_content["attributes"].get("one-liner"),
+        }
+        summary[file_content["attributes"].get("status").lower()].append(
+            project_summary
+        )
+# generate index page
+render(f"project/index.html", index_template, projects=summary)
