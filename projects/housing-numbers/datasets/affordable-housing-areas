@@ -2,6 +2,6 @@
 name: Affordable housing areas
 characteristics:
     identifier: affordable-housing-areas
-    typology: 
-    data provider and maintainer: 
+    typology: geography
+    data provider and maintainer: local planning authorities
 ---
