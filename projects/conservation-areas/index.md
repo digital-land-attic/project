@@ -1,5 +1,5 @@
 ---
-name: Conservation area
+name: Conservation areas
 status: In progress
 characteristics:
     identifier: conservation-area

@@ -98,5 +98,7 @@ for project in projects:
         summary[file_content["attributes"].get("status").lower()].append(
             project_summary
         )
+for k in summary.keys():
+    summary[k].sort(key=lambda x: x["name"])
 # generate index page
 render(f"project/index.html", index_template, projects=summary)
