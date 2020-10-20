@@ -1,8 +1,8 @@
 ---
-name: Flooding
+name: Flood zones
 status: To explore
 characteristics:
-    identifier: flooding
+    identifier: flood-zones
     typology: geography
     data provider and maintainer: Environment Agency
 ---
