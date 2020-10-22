@@ -3,7 +3,7 @@ name: Planning application drawings and documents
 status: To explore
 characteristics:
     identifier: planning-application-drawings-and-documents
-    typology: 
+    typology: document
     data provider and maintainer: local planning authorities
 ---
 
