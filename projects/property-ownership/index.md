@@ -7,6 +7,6 @@ characteristics:
     data provider and maintainer: Land Registry 
 ---
 
-We are collecting and publishing data on planning policies and decisions. One dataset that we’re currently working on is property ownership. 
+We collect and publish data on planning policies and decisions. One dataset we want to explore is property ownership. 
 
 Property ownership shows the boundary of property as described in the property's title deeds.
