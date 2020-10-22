@@ -1,5 +1,6 @@
 ---
 name: Target number of homes (yearly)
+characteristics:
     identifier: target-number-of-homes-yearly
     typology: value
     data provider and maintainer: local planning authority
