@@ -11,9 +11,3 @@ characteristics:
 We collect and publish data on planning policies and decisions. One dataset that we’re currently working on is conservation areas.
 
 A conservation area is an area considered worth preserving or enhancing.
-
-Useful links:
-
-* [Conservation areas -  landing page prototype](#)
-* [Conservation areas - draft data standard](#)
-* [Conservation areas -  draft schema](#)
