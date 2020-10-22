@@ -3,7 +3,7 @@ name: Neighbourhood plan area boundaries
 characteristics:
     identifier: neighbourhood-plan-area-boundaries
     typology: geography
-    data provider and maintainer: 
+    guidance: https://www.gov.uk/guidance/neighbourhood-planning--2#designating-a-neighbourhood-area
 ---
 
 Neighbourhood plan area boundaries are polygons showing the area which a neighbourhood plan covers.
