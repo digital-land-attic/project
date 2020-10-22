@@ -4,6 +4,6 @@ status: To explore
 characteristics:
     identifier: local-woodland
     typology: geography
-    data provider and maintainer: 
+    data provider and maintainer: local planning authorities
 ---
 
