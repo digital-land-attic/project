@@ -3,6 +3,8 @@ name: Building use class
 status: To explore
 characteristics:
     identifier: building-use-class
-    typology: 
+    typology: category
     data provider and maintainer: local planning authorities
 ---
+
+A building class determines a property may be used for by its occupants.
