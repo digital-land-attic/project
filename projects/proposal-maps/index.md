@@ -7,6 +7,6 @@ characteristics:
     data provider and maintainer: local planning authorities
 ---
 
-We are collecting and publishing data on planning policies and decisions. One dataset that we’re currently working on is proposal maps. 
+We collect and publish data on planning policies and decisions. One dataset we want to explore is proposal maps. 
 
 Proposal maps are maps of geospatial policies, site allocations and land designations in a local plan.
