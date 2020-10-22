@@ -10,3 +10,5 @@ characteristics:
 We collect and publish data on planning policies and decisions. One dataset we want to explore is broads.
 
 The Norfolk and Suffolk Broads is Britain's largest protected wetland and third largest inland waterway, with the protected status of a national park.
+
+We have not yet started exploring this area, but we are aware that there is an existing dataset on [broadland and broads authority boundary](https://www.broadland.gov.uk/downloads/file/1186/broadland_and_broads_authority_boundary)
