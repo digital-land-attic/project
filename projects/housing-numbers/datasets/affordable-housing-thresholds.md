@@ -2,6 +2,7 @@
 name: Affordable housing thresholds
 characteristics:
     identifier: affordable-housing-thresholds
-    typology: 
-    data provider and maintainer: 
+    typology: category
+    data provider and maintainer: local planning authorities
 ---
+
