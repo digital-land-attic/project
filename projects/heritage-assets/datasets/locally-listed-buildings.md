@@ -5,4 +5,5 @@ characteristics:
     typology: geography
     data provider and maintainer: local planning authorities
 ---
-Buildings and sites that a local planning authority have listed as having heritage value. This may give a level of additional protection to the building or site.
+
+Locally listed buildings are sites and buildings that a local planning authority have listed as having heritage value. This may give the site a level of additional protection.
