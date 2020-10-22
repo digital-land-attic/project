@@ -7,6 +7,8 @@ characteristics:
     data provider and maintainer: National Park Authority
 ---
 
-We are collecting and publishing data on planning policies and decisions. One dataset that we’re currently working on is national parks. 
+We collect and publish data on planning policies and decisions. One dataset we want to explore is national parks. 
 
 National parks are areas of land that are protected because of their beautiful countryside, wildlife and cultural heritage.
+
+We have not yet started exploring this area, but we are aware that Natural England have published an existing dataset on [national parks](https://data.gov.uk/dataset/334e1b27-e193-4ef5-b14e-696b58bb7e95/national-parks-england).
