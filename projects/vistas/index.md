@@ -5,4 +5,4 @@ characteristics:
     identifier: vistas
 ---
 
-We are collecting and publishing data on planning policies and decisions. One dataset that we’re currently working on is vistas.
+We collect and publish data on planning policies and decisions. One dataset we want to explore is vistas.
