@@ -1,6 +1,7 @@
 ---
 name: Brownfield land
 status: Published
+one-liner: "We have built a national picture of brownfield land."
 characteristics:
     identifier: brownfield-land
     typology: geography

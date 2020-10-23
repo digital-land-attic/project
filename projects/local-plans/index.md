@@ -1,6 +1,7 @@
 ---
 name: "Local plans"
 status: "in progress"
+designHistory: True
 ---
 
 We collect and publish data on planning policies and decisions. One of the main areas we are exploring is local plans.

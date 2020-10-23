@@ -50,6 +50,7 @@ env.globals["staticPath"] = "https://digital-land.github.io"
 index_template = env.get_template("index.html")
 project_template = env.get_template("project.html")
 content_template = env.get_template("content.html")
+design_history_template = env.get_template("design-history.html")
 
 project_dir = "projects/"
 
@@ -71,6 +72,7 @@ def get_project_content(filename):
         "name": file_content["attributes"].get("name"),
         "status": file_content["attributes"].get("status"),
         "characteristics": file_content["attributes"].get("characteristics"),
+        "frontmatter": file_content["attributes"],
         "description": compile_markdown(md, file_content["body"]),
     }
 
@@ -95,6 +97,7 @@ for project in projects:
     if os.path.isdir(f"{project_dir}{project}/content"):
         md_files = markdown_files_only(os.listdir(f"{project_dir}{project}/content"))
 
+        design_history = []
         for f in md_files:
             file_content = Frontmatter.read_file(f"{project_dir}{project}/content/{f}")
             html = compile_markdown(md, file_content["body"])
@@ -106,6 +109,20 @@ for project in projects:
                 fm=file_content["attributes"],
                 project=project,
             )
+
+            design_history.append(
+                {
+                    "name": file_content["attributes"]["name"],
+                    "url": f.replace(".md", ""),
+                }
+            )
+        # generate a design history page
+        render(
+            f"{project}/design-history/index.html",
+            design_history_template,
+            project=project,
+            design_history=design_history,
+        )
 
     render(f"{project}/index.html", project_template, project=project_content)
 
