@@ -1,6 +1,8 @@
 {% extends "digital-land-frontend/dlf-base.html" %}
 {% from 'digital-land-frontend/components/feedback-panel/macro.html' import dlFeedbackPanel %}
 
+{% set project_name = project|replace("-", " ")|capitalize %}
+
 {% block beforeContent %}
   {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
   {% block dl_breadcrumbs %}
@@ -11,7 +13,15 @@
         "href": "https://digital-land.github.io/"
       },
       {
-        "text": "Projects"
+        "text": "Projects",
+        "href": "/projects"
+      },
+      {
+        "text": project_name,
+        "href": "/projects/" + project_name
+      },
+      {
+        "text": fm.name
       }
     ]
   }) }}
@@ -19,7 +29,7 @@
 {% endblock %}
 
 {% block content %}
-<span class="govuk-caption-xl">{{ project }}</span>
+<span class="govuk-caption-xl">{{ project_name }}</span>
 <h1 class="govuk-heading-xl">{{ fm.name }}</h1>
 
 <div class="govuk-grid-row">
