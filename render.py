@@ -43,6 +43,9 @@ env = jinja2.Environment(loader=multi_loader, autoescape=True)
 # register jinja filters
 env.filters["make_link"] = make_link
 
+# set variables to make available to all templates
+env.globals["staticPath"] = "https://digital-land.github.io"
+
 # get templates
 index_template = env.get_template("index.html")
 project_template = env.get_template("project.html")
