@@ -96,7 +96,7 @@ for project in projects:
             file_content = Frontmatter.read_file(f"{project_dir}{project}/content/{f}")
             html = compile_markdown(md, file_content["body"])
             render(
-                f"project/{project}/{f.replace('.md', '')}/index.html",
+                f"{project}/{f.replace('.md', '')}/index.html",
                 content_template,
                 content=html,
                 toc=md.toc_tokens,
@@ -104,7 +104,7 @@ for project in projects:
                 project=project,
             )
 
-    render(f"project/{project}/index.html", project_template, project=project_content)
+    render(f"{project}/index.html", project_template, project=project_content)
 
 
 # generate summary for index page
@@ -124,4 +124,4 @@ for project in projects:
 for k in summary.keys():
     summary[k].sort(key=lambda x: x["name"])
 # generate index page
-render(f"project/index.html", index_template, projects=summary)
+render(f"index.html", index_template, projects=summary)
