@@ -1,6 +1,7 @@
 ---
 name: Proposal maps
 status: To explore
+one-liner: "We are going to explore how we can help Local Authorities make proposal maps data available."
 characteristics:
     identifier: proposal-maps
     typology: geography

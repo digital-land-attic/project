@@ -1,6 +1,7 @@
 ---
 name: Green belt
 status: To explore
+one-liner: "We are going to explore how we can help Local Authorities make Greenbelt data available."
 characteristics:
     identifier: green-belt
     typology: geography

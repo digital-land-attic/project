@@ -1,6 +1,7 @@
 ---
 name: Gypsy and traveller sites
 status: To explore
+one-liner: "We are going to explore how we can help Local Authorities make Gypsy and Traveller Sites data available."
 characteristics:
     identifier: gypsy-and-traveller-sites
     typology: geography

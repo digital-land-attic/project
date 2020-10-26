@@ -1,7 +1,7 @@
 ---
 name: Brownfield land
 status: "in progress"
-one-liner: "We have built a national picture of brownfield land."
+one-liner: "We have published a national picture of Brownfield Land using the registers Local Authorities currently maintain."
 characteristics:
     identifier: brownfield-land
     typology: geography
