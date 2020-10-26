@@ -135,6 +135,7 @@ for project in projects:
         file_content = Frontmatter.read_file(filename)
         summary.setdefault(file_content["attributes"].get("status").lower(), [])
         project_summary = {
+            "project_dir": project,
             "name": file_content["attributes"].get("name"),
             "description": file_content["attributes"].get("one-liner"),
         }

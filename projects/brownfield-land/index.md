@@ -1,6 +1,6 @@
 ---
 name: Brownfield land
-status: Published
+status: "in progress"
 one-liner: "We have built a national picture of brownfield land."
 characteristics:
     identifier: brownfield-land
