@@ -6,11 +6,10 @@ import markdown
 from frontmatter import Frontmatter
 from bin.govukify import govukify_markdown_output
 from bin.jinja_setup import env, render
+from bin.helpers import read_in_json
 from digital_land_frontend.filters import make_link
 
 from markdown.extensions.toc import TocExtension
-
-docs = "docs/"
 
 # register jinja filters
 env.filters["make_link"] = make_link
@@ -18,22 +17,18 @@ env.filters["make_link"] = make_link
 # set variables to make available to all templates
 env.globals["staticPath"] = "https://digital-land.github.io"
 
-# get templates
-index_template = env.get_template("index.html")
-project_template = env.get_template("project.html")
-content_template = env.get_template("content.html")
-design_history_template = env.get_template("design-history.html")
-
-project_dir = "projects/"
-
 # init markdown
 md = markdown.Markdown(extensions=[TocExtension(toc_depth="2-3")])
-
 
 def compile_markdown(md, s):
     html = md.convert(s)
     return govukify_markdown_output(html)
 
+# making markdown compiler available to jinja templates
+def markdown_filter(s):
+    return compile_markdown(md, s)
+
+env.filters["markdown"] = markdown_filter
 
 def get_project_content(filename):
     file_content = Frontmatter.read_file(filename)
@@ -50,6 +45,13 @@ def markdown_files_only(files, file_ext=".md"):
     return [f for f in files if f.endswith(file_ext)]
 
 
+# get templates
+index_template = env.get_template("index.html")
+project_template = env.get_template("project.html")
+content_template = env.get_template("content.html")
+design_history_template = env.get_template("design-history.html")
+
+project_dir = "projects/"
 projects = os.listdir(project_dir)
 
 for project in projects:
@@ -99,21 +101,21 @@ for project in projects:
 
 
 # generate summary for /index page
-summary = {}
+summary = read_in_json("config/project_buckets.json")
 for project in projects:
     filename = f"{project_dir}{project}/index.md"
     if os.path.exists(filename):
         file_content = Frontmatter.read_file(filename)
-        summary.setdefault(file_content["attributes"].get("status").lower(), [])
+        summary.setdefault(file_content["attributes"].get("status").lower(), {"projects":[]})
         project_summary = {
             "project_dir": project,
             "name": file_content["attributes"].get("name"),
             "description": file_content["attributes"].get("one-liner"),
         }
-        summary[file_content["attributes"].get("status").lower()].append(
+        summary[file_content["attributes"].get("status").lower()]["projects"].append(
             project_summary
         )
 for k in summary.keys():
-    summary[k].sort(key=lambda x: x["name"])
+    summary[k]["projects"].sort(key=lambda x: x["name"])
 # generate index page
 render(f"index.html", index_template, projects=summary)

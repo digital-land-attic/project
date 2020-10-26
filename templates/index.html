@@ -34,10 +34,11 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        {% for section in ['published', 'in progress', 'to explore'] %}
-        <h2 class="govuk-heading-l">{{ section|capitalize }}</h2>
+        {% for status, obj in projects.items() %}
+        <h2 class="govuk-heading-l">{{ status|capitalize }}</h2>
+        {{ obj["description"]|markdown|safe }}
         <ul class="govuk-list">
-        {%- for project in projects[section] %}
+        {%- for project in obj["projects"] %}
             {{ projectListing(project) }} 
         {% endfor -%}
         </ul>
