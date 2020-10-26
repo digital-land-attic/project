@@ -1,44 +1,16 @@
 #!/usr/bin/env python3
 
 import os
-import codecs
-import jinja2
 import markdown
 
 from frontmatter import Frontmatter
 from bin.govukify import govukify_markdown_output
+from bin.jinja_setup import env, render
 from digital_land_frontend.filters import make_link
 
 from markdown.extensions.toc import TocExtension
 
 docs = "docs/"
-
-
-def render(path, template, **kwargs):
-    path = os.path.join(docs, path)
-    directory = os.path.dirname(path)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
-    with open(path, "w") as f:
-        f.write(template.render(**kwargs))
-
-
-# register templates
-multi_loader = jinja2.ChoiceLoader(
-    [
-        jinja2.FileSystemLoader(searchpath="./templates"),
-        jinja2.PrefixLoader(
-            {
-                "digital-land-frontend": jinja2.PackageLoader("digital_land_frontend"),
-                "govuk-jinja-components": jinja2.PackageLoader(
-                    "govuk_jinja_components"
-                ),
-            }
-        ),
-    ]
-)
-env = jinja2.Environment(loader=multi_loader, autoescape=True)
 
 # register jinja filters
 env.filters["make_link"] = make_link
@@ -63,9 +35,6 @@ def compile_markdown(md, s):
     return govukify_markdown_output(html)
 
 
-projects = os.listdir(project_dir)
-
-
 def get_project_content(filename):
     file_content = Frontmatter.read_file(filename)
     return {
@@ -80,6 +49,8 @@ def get_project_content(filename):
 def markdown_files_only(files, file_ext=".md"):
     return [f for f in files if f.endswith(file_ext)]
 
+
+projects = os.listdir(project_dir)
 
 for project in projects:
     hasMultipleDatasets = False
@@ -127,7 +98,7 @@ for project in projects:
     render(f"{project}/index.html", project_template, project=project_content)
 
 
-# generate summary for index page
+# generate summary for /index page
 summary = {}
 for project in projects:
     filename = f"{project_dir}{project}/index.md"
