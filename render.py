@@ -113,7 +113,7 @@ for project in projects:
             design_history.append(
                 {
                     "name": file_content["attributes"]["name"],
-                    "url": f.replace(".md", ""),
+                    "url": f"../{f.replace('.md', '')}",
                 }
             )
         # generate a design history page
