@@ -1,6 +1,7 @@
 ---
 name: Employment space
 status: To explore
+one-liner: "We are going to explore how we can standardise and help Local Authorities make available employment space metrics in policy and planning decisions."
 characteristics:
     identifier: employment-space
     data provider and maintainer: local planning authorities

@@ -1,6 +1,7 @@
 ---
 name: Conservation areas
-status: In progress
+status: "In progress"
+one-liner: "We are going to explore how we can help Local Authorities make Conservation area data available."
 characteristics:
     identifier: conservation-area
     typology: geography

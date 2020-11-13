@@ -1,6 +1,7 @@
 ---
 name: Planning conditions
 status: To explore
+one-liner: "We are going to explore how we can help Local Authorities make Neighbourhood Plan data available."
 characteristics:
     identifier: planning-conditions
     typology: document

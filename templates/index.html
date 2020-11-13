@@ -21,7 +21,7 @@
 {% macro projectListing(project) %}
 <li>
     <h3 class="govuk-heading-m{{ ' govuk-!-margin-bottom-2' if project.description }}">
-        <a href="{{ project.name|lower|replace(' ', '-') }}" class="govuk-link">{{ project.name }}</a></h3>
+        <a href="{{ project.project_dir }}" class="govuk-link">{{ project.name }}</a></h3>
     {%- if project.description %}
     <p class="govuk-body">{{ project.description }}</p>
     {% endif -%}
@@ -34,10 +34,11 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        {% for section in ['published', 'in progress', 'to explore'] %}
-        <h2 class="govuk-heading-l">{{ section|capitalize }}</h2>
+        {% for status, obj in projects.items() %}
+        <h2 class="govuk-heading-l">{{ status|capitalize }}</h2>
+        {{ obj["description"]|markdown|safe }}
         <ul class="govuk-list">
-        {%- for project in projects[section] %}
+        {%- for project in obj["projects"] %}
             {{ projectListing(project) }} 
         {% endfor -%}
         </ul>

@@ -1,6 +1,7 @@
 ---
 name: "Local plans"
 status: "in progress"
+one-liner: "We are developing a data standard to help make it easier for Local authorities to publish their local plans and policies as data."
 designHistory: True
 ---
 

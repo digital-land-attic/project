@@ -1,6 +1,7 @@
 ---
 name: Vistas
-status: To explore
+status: "To explore"
+one-liner: "We are going to explore how we can help Local Authorities make protected vista data available."
 characteristics:
     identifier: vistas
 ---
