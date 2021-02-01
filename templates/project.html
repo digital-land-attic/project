@@ -1,6 +1,8 @@
 {% extends "digital-land-frontend/dlf-base.html" %}
 {% from 'digital-land-frontend/components/feedback-panel/macro.html' import dlFeedbackPanel %}
 
+{% block pageTitle %}{{ project.name }} | Projects | Digital Land{% endblock %}
+
 {% block beforeContent %}
   {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
   {% block dl_breadcrumbs %}
@@ -12,7 +14,7 @@
       },
       {
         "text": "Projects",
-        "href": "/projects"
+        "href": "/project"
       },
       {
         "text": project.name

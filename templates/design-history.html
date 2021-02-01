@@ -3,6 +3,8 @@
 
 {% set project_name = project|replace("-", " ")|capitalize %}
 
+{% block pageTitle %}Design History - {{ project_name }} | Projects | Digital Land{% endblock %}
+
 {% block beforeContent %}
   {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
   {% block dl_breadcrumbs %}
