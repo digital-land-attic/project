@@ -2,27 +2,26 @@
 <html lang="en" class="govuk-template ">
   <head>
     <meta charset="utf-8">
-    <title>GOV.UK - The best place to find government services and information</title>
+    <title>Digital Land - Planning data you can find, use and trust</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     
-      <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicon.ico" type="image/x-icon">
-      <link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c"> 
-      <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/govuk-apple-touch-icon-180x180.png">
-      <link rel="apple-touch-icon" sizes="167x167" href="/assets/images/govuk-apple-touch-icon-167x167.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/govuk-apple-touch-icon-152x152.png">
-      <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
+      <link rel="manifest" href="/site.webmanifest">
+      <link rel="shortcut icon" sizes="48x48" href="/images/favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" sizes="32x32" href="/images/favicon-32x32.png" type="image/png">
+      <link rel="shortcut icon" sizes="16x16" href="/images/favicon-16x16.png" type="image/png">
+      <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     
 
     
-<link href="https://digital-land.github.io/stylesheets/dl-frontend.css" rel="stylesheet" />
-
+	<link href="https://digital-land.github.io/stylesheets/dl-frontend.css" rel="stylesheet" />
+	
     
     
-    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
+    <meta property="og:image" content="/images/govuk-opengraph-image.png">
   </head>
   <body class="govuk-template__body ">
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
@@ -61,6 +60,8 @@
   </div>
 
 </div>
+
+
 <header role="banner" id="global-header" class="govuk-header  with-proposition dl-header" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="header-proposition">
@@ -69,7 +70,6 @@
         Digital Land
         </a>
         <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
-
         <nav>
           <ul id="navigation" class="govuk-header__navigation" aria-label="Top Level Navigation">
             <li class="govuk-header__navigation-item">
@@ -98,17 +98,18 @@
             </li>
           </ul>
         </nav>
-      </div>
+        </div>
     </div>
   </div>
 </header>
+
 
 
     
       <div class="govuk-width-container ">
         
   
-<div class="govuk-phase-banner govuk-width-container">
+<div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
   prototype
 </strong><span class="govuk-phase-banner__text">
@@ -128,7 +129,7 @@
   
     
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/projects">Projects</a>
+      <a class="govuk-breadcrumbs__link" href="/project">Projects</a>
     </li>
     
   
@@ -156,6 +157,31 @@
 
 <section class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Local woodland</h3>
+        
+        <dl class="govuk-summary-list">
+        
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Identifier</dt>
+                <dd class="govuk-summary-list__value">local-woodland</dd>
+            </div>
+        
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Typology</dt>
+                <dd class="govuk-summary-list__value">geography</dd>
+            </div>
+        
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Data provider and maintainer</dt>
+                <dd class="govuk-summary-list__value">local planning authorities</dd>
+            </div>
+        
+        </dl>
+        </div>
+</section>
+
+<section class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
         <h3 class="govuk-heading-m">Ancient semi-natural woodland</h3>
         <p class="govuk-body">Ancient semi-natural woodland are areas of woodland that have existed continuously since the year 1600.</p>
 <p class="govuk-body">We have not yet started exploring this area, but we are aware that Natural England have published an <a href="https://data.gov.uk/dataset/9461f463-c363-4309-ae77-fdcd7e9df7d3/ancient-woodland-england">existing dataset of ancient woodland in England</a>.</p>
@@ -180,31 +206,6 @@
         </div>
 </section>
 
-<section class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h3 class="govuk-heading-m">Local woodland</h3>
-        
-        <dl class="govuk-summary-list">
-        
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Identifier</dt>
-                <dd class="govuk-summary-list__value">local-woodland</dd>
-            </div>
-        
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Typology</dt>
-                <dd class="govuk-summary-list__value">geography</dd>
-            </div>
-        
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Data provider and maintainer</dt>
-                <dd class="govuk-summary-list__value">local planning authorities</dd>
-            </div>
-        
-        </dl>
-        </div>
-</section>
-
 
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -222,6 +223,7 @@
 
     
   
+
 
 
 

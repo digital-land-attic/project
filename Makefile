@@ -1,5 +1,5 @@
-# current git branch
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+DOCS_DIR=./docs/
 
 init:
 	pip install --upgrade -r requirements.txt
@@ -7,10 +7,11 @@ init:
 render:
 	mkdir -p docs
 	python3 render.py
-
-clobber:
-	rm -rf docs
-
+	
+clean::
+	rm -rf $(DOCS_DIR)
+	mkdir -p $(DOCS_DIR)
+	
 commit-docs::
 	git add docs
-	git diff --quiet && git diff --staged --quiet || (git commit -m "Rebuilt project pages $(shell date +%F)"; git push origin $(BRANCH))
+	git diff --quiet && git diff --staged --quiet || (git commit -m "Rebuilt docs $(shell date +%F)"; git push origin $(BRANCH))

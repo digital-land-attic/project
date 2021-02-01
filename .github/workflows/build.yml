@@ -1,4 +1,4 @@
-name: Build project pages
+name: Build Project pages
 
 on:
   push:
@@ -35,8 +35,8 @@ jobs:
     - name: Install dependencies
       run: make init
 
-    - name: Force rebuild of pages and dataset
-      run: make clobber
+    - name: Start clean
+      run: make clean
 
     - name: Build docs
       run: make render
