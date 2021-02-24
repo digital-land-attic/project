@@ -40,6 +40,16 @@
 
 {{ project.description|safe }}
 
+{% macro schemaDiagram(params) %}
+{% if params.dataset %}
+<h4 class="govuk-heading-s">Schema diagram</h4>
+{% else %}
+<h3 class="govuk-heading-m govuk-!-margin-top-6">Schema diagram</h3>
+{% endif %}
+<img src="{{ params['url'] }}" alt="{{ params['alt'] }}">
+<a href="{{ params['url'] }}" class="govuk-link">See full size version of diagram (SVG).</a>
+{% endmacro %}
+
 {%- if project.characteristics %}
 <section class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -52,6 +62,13 @@
             </div>
         {% endfor %}
         </dl>
+        {% if project['frontmatter']["schema-diagram"] %}
+        {{ schemaDiagram({
+          "dataset": false,
+          "url": "../images/diagrams/" + project['frontmatter']['schema-diagram']['name'],
+          "alt": project['frontmatter']['schema-diagram']['alt']
+        })}}
+        {% endif %}
     </div>
 </section>
 {% endif -%}
@@ -73,6 +90,13 @@
         {% endfor %}
         </dl>
         {% endif -%}
+        {% if dataset['frontmatter']["schema-diagram"] %}
+        {{ schemaDiagram({
+          "dataset": true,
+          "url": "../images/diagrams/" + dataset['frontmatter']['schema-diagram']['name'],
+          "alt": dataset['frontmatter']['schema-diagram']['alt']
+        })}}
+        {% endif %}
     </div>
 </section>
 {% endfor %}

@@ -7,6 +7,9 @@ characteristics:
     typology: document
     data provider and maintainer: local planning authorities
     guidance: https://www.gov.uk/guidance/publish-your-developer-contributions-data
+schema-diagram:
+    name: "developer-contribution-schema-diagram.svg"
+    alt: "Diagram showing how the 3 developer contribution schemas fit together"
 ---
 
 We collect and publish data on planning policies and decisions. One national dataset that we’ve started to collect is developer contributions.
