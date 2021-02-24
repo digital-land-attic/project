@@ -46,7 +46,9 @@
 {% else %}
 <h3 class="govuk-heading-m govuk-!-margin-top-6">Schema diagram</h3>
 {% endif %}
-<img src="{{ params['url'] }}" alt="{{ params['alt'] }}">
+<a href="{{ params['url'] }}">
+  <img src="{{ params['url'] }}" alt="{{ params['alt'] }}">
+</a>
 <a href="{{ params['url'] }}" class="govuk-link">See full size version of diagram (SVG).</a>
 {% endmacro %}
 
