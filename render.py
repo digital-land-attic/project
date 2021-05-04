@@ -58,11 +58,11 @@ design_history_template = env.get_template("design-history.html")
 summary = read_in_json("config/project_buckets.json")
 
 
-def add_to_bucket(project_dir, project):
+def add_to_bucket(project_path, project):
     summary.setdefault(project.get("status").lower(), {"projects": []})
     # make the summary obj
     project_summary = {
-        "project_dir": project_dir,
+        "path": project_path,
         "name": project.get("name"),
         "description": project.get("one-liner"),
     }
@@ -115,7 +115,7 @@ for project in projects:
     project_content = get_project_content(f"{project_dir}{project}/index.md")
 
     # add to buckets for index
-    add_to_bucket(project_dir, project_content)
+    add_to_bucket(project, project_content)
 
     # collect any additional updates
     updates = []
