@@ -1,5 +1,6 @@
 {% extends "digital-land-frontend/dlf-base.html" %}
 {% from 'digital-land-frontend/components/feedback-panel/macro.html' import dlFeedbackPanel %}
+{%- from "digital-land-frontend/components/related-content/macro.html" import dlRelatedContent %}
 
 {% block pageTitle %}{{ project.name }} | Projects | Digital Land{% endblock %}
 
@@ -38,71 +39,51 @@
     {%- endif %}
 </h1>
 
-{{ project.body|markdown|safe }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ project.body|markdown|safe }}
 
-{% macro schemaDiagram(params) %}
-{% if params.dataset %}
-<h4 class="govuk-heading-s">Schema diagram</h4>
-{% else %}
-<h3 class="govuk-heading-m govuk-!-margin-top-6">Schema diagram</h3>
-{% endif %}
-<a href="{{ params['url'] }}">
-  <img src="{{ params['url'] }}" alt="{{ params['alt'] }}">
-</a>
-<a href="{{ params['url'] }}" class="govuk-link">See full size version of diagram (SVG).</a>
-{% endmacro %}
+    {% macro schemaDiagram(params) %}
+    {% if params.dataset %}
+    <h4 class="govuk-heading-s">Schema diagram</h4>
+    {% else %}
+    <h3 class="govuk-heading-m govuk-!-margin-top-6">Schema diagram</h3>
+    {% endif %}
+    <a href="{{ params['url'] }}">
+      <img src="{{ params['url'] }}" alt="{{ params['alt'] }}">
+    </a>
+    <a href="{{ params['url'] }}" class="govuk-link">See full size version of diagram (SVG).</a>
+    {% endmacro %}
 
-{%- if project['frontmatter']['characteristics'] %}
-<section class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h3 class="govuk-heading-m govuk-!-margin-top-6">Characteristics</h3>
-        <dl class="govuk-summary-list">
-        {% for prop, val in project['frontmatter']['characteristics'].items()  %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">{{ prop|capitalize }}</dt>
-                <dd class="govuk-summary-list__value">{{ val|make_link }}</dd>
-            </div>
-        {% endfor %}
-        </dl>
-        {% if project['frontmatter']["schema-diagram"] %}
-        {{ schemaDiagram({
-          "dataset": false,
-          "url": "../images/diagrams/" + project['frontmatter']['schema-diagram']['name'],
-          "alt": project['frontmatter']['schema-diagram']['alt']
-        })}}
-        {% endif %}
-    </div>
-</section>
-{% endif -%}
+    {%- if project['frontmatter']['characteristics'] %}
+      <h3 class="govuk-heading-m govuk-!-margin-top-6">Characteristics</h3>
+      <dl class="govuk-summary-list">
+      {% for prop, val in project['frontmatter']['characteristics'].items()  %}
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">{{ prop|capitalize }}</dt>
+              <dd class="govuk-summary-list__value">{{ val|make_link }}</dd>
+          </div>
+      {% endfor %}
+      </dl>
+      {% if project['frontmatter']["schema-diagram"] %}
+      {{ schemaDiagram({
+        "dataset": false,
+        "url": "../images/diagrams/" + project['frontmatter']['schema-diagram']['name'],
+        "alt": project['frontmatter']['schema-diagram']['alt']
+      })}}
+      {% endif %}
+    {% endif -%}
+  </div>
+  <div class="govuk-grid-column-one-third">
+  {%- if project['frontmatter']['artefacts'] -%}
+    {{ dlRelatedContent({
+      "heading": "Related artefacts",
+      "links": project['frontmatter']['artefacts']
+    }) }}
+  {%- endif -%}
+  </div>
+</div>
 
-{% if project.datasets|length > 0 %}
-<h2 class="govuk-heading-l">Datasets</h2>
-{% for dataset in project.datasets  %}
-<section class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h3 class="govuk-heading-m">{{ dataset.name }}</h3>
-        {{ dataset.description|safe }}
-        {%- if dataset.characteristics %}
-        <dl class="govuk-summary-list">
-        {% for prop, val in dataset.characteristics.items()  %}
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">{{ prop|capitalize }}</dt>
-                <dd class="govuk-summary-list__value">{{ val|make_link }}</dd>
-            </div>
-        {% endfor %}
-        </dl>
-        {% endif -%}
-        {% if dataset['frontmatter']["schema-diagram"] %}
-        {{ schemaDiagram({
-          "dataset": true,
-          "url": "../images/diagrams/" + dataset['frontmatter']['schema-diagram']['name'],
-          "alt": dataset['frontmatter']['schema-diagram']['alt']
-        })}}
-        {% endif %}
-    </div>
-</section>
-{% endfor %}
-{% endif %}
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 {{ dlFeedbackPanel({

@@ -4,7 +4,11 @@ status: "In progress"
 one-liner: "We are going to explore how we can help Local Authorities make Conservation area data available."
 provider-and-maintainer: local planning authorities
 legislation: https://www.legislation.gov.uk/ukpga/1990/9/section/69
-
+artefacts:
+    - text: Guidance
+      href: https://digital-land.github.io/guidance/conservation-area/
+    - text: Legislation
+      href: https://www.legislation.gov.uk/ukpga/1990/9/section/69
 ---
 
 A conservation area is an area considered worth preserving or enhancing. They are defined by local authorities and impact the allowable developments in that area.
