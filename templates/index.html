@@ -23,7 +23,7 @@
 {% macro projectListing(project) %}
 <li>
     <h3 class="govuk-heading-m{{ ' govuk-!-margin-bottom-2' if project.description }}">
-        <a href="{{ project.project_dir }}" class="govuk-link">{{ project.name }}</a></h3>
+        <a href="{{ project['path'] }}" class="govuk-link">{{ project.name }}</a></h3>
     {%- if project.description %}
     <p class="govuk-body">{{ project.description }}</p>
     {% endif -%}

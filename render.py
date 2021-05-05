@@ -20,24 +20,27 @@ env.globals["staticPath"] = "https://digital-land.github.io"
 # init markdown
 md = markdown.Markdown(extensions=[TocExtension(toc_depth="2-3")])
 
+
 def compile_markdown(md, s):
     html = md.convert(s)
     return govukify_markdown_output(html)
+
 
 # making markdown compiler available to jinja templates
 def markdown_filter(s):
     return compile_markdown(md, s)
 
+
 env.filters["markdown"] = markdown_filter
+
 
 def get_project_content(filename):
     file_content = Frontmatter.read_file(filename)
     return {
         "name": file_content["attributes"].get("name"),
         "status": file_content["attributes"].get("status"),
-        "characteristics": file_content["attributes"].get("characteristics"),
         "frontmatter": file_content["attributes"],
-        "description": compile_markdown(md, file_content["body"]),
+        "body": file_content["body"],
     }
 
 
@@ -51,70 +54,81 @@ project_template = env.get_template("project.html")
 content_template = env.get_template("content.html")
 design_history_template = env.get_template("design-history.html")
 
+# get empty project buckets
+summary = read_in_json("config/project_buckets.json")
+
+
+def add_to_bucket(project_path, project):
+    summary.setdefault(project.get("status").lower(), {"projects": []})
+    # make the summary obj
+    project_summary = {
+        "path": project_path,
+        "name": project.get("name"),
+        "description": project.get("one-liner"),
+    }
+    # append to correct bucket
+    summary[project.get("status").lower()]["projects"].append(project_summary)
+
+
 project_dir = "projects/"
 projects = os.listdir(project_dir)
 
-for project in projects:
-    hasMultipleDatasets = False
-    project_content = get_project_content(f"{project_dir}{project}/index.md")
-    # get dataset content to display on project page
-    if os.path.isdir(f"{project_dir}{project}/datasets"):
-        datasets = []
-        md_files = markdown_files_only(os.listdir(f"{project_dir}{project}/datasets"))
 
-        for f in md_files:
-            datasets.append(get_project_content(f"{project_dir}{project}/datasets/{f}"))
-        project_content["datasets"] = datasets
+def render_project_content_pages(project):
+    content_dir = f"{project_dir}{project}/content"
+    md_files = markdown_files_only(os.listdir(content_dir))
+    for f in md_files:
+        file_content = Frontmatter.read_file(f"{content_dir}/{f}")
+        html = compile_markdown(md, file_content["body"])
+        render(
+            f"{project}/{f.replace('.md', '')}/index.html",
+            content_template,
+            content=html,
+            toc=md.toc_tokens,
+            fm=file_content["attributes"],
+            project=project,
+        )
+
+
+# loop each project
+# loop over additional content files
+# extract frontmatter
+# compile markdown
+# render
+
+# get index md
+# extract frontmatter
+# process frontmatter
+# compile markdown
+# loop over updates
+# extract frontmatter
+# compile markdown
+# render project page
+
+
+for project in projects:
 
     # render any additional content pages
     if os.path.isdir(f"{project_dir}{project}/content"):
-        md_files = markdown_files_only(os.listdir(f"{project_dir}{project}/content"))
+        render_project_content_pages(project)
 
-        design_history = []
-        for f in md_files:
-            file_content = Frontmatter.read_file(f"{project_dir}{project}/content/{f}")
-            html = compile_markdown(md, file_content["body"])
-            render(
-                f"{project}/{f.replace('.md', '')}/index.html",
-                content_template,
-                content=html,
-                toc=md.toc_tokens,
-                fm=file_content["attributes"],
-                project=project,
-            )
+    project_content = get_project_content(f"{project_dir}{project}/index.md")
 
-            design_history.append(
-                {
-                    "name": file_content["attributes"]["name"],
-                    "url": f"../{f.replace('.md', '')}",
-                }
-            )
-        # generate a design history page
-        render(
-            f"{project}/design-history/index.html",
-            design_history_template,
-            project=project,
-            design_history=design_history,
-        )
+    # add to buckets for index
+    add_to_bucket(project, project_content)
 
-    render(f"{project}/index.html", project_template, project=project_content)
+    # collect any additional updates
+    updates = []
+
+    render(
+        f"{project}/index.html",
+        project_template,
+        project=project_content,
+        artefacts=project_content["frontmatter"].get("artefacts"),
+        updates=updates,
+    )
 
 
-# generate summary for /index page
-summary = read_in_json("config/project_buckets.json")
-for project in projects:
-    filename = f"{project_dir}{project}/index.md"
-    if os.path.exists(filename):
-        file_content = Frontmatter.read_file(filename)
-        summary.setdefault(file_content["attributes"].get("status").lower(), {"projects":[]})
-        project_summary = {
-            "project_dir": project,
-            "name": file_content["attributes"].get("name"),
-            "description": file_content["attributes"].get("one-liner"),
-        }
-        summary[file_content["attributes"].get("status").lower()]["projects"].append(
-            project_summary
-        )
 for k in summary.keys():
     summary[k]["projects"].sort(key=lambda x: x["name"])
 # generate index page

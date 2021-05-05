@@ -3,6 +3,9 @@ name: "Local plans"
 status: "in progress"
 one-liner: "We are developing a data standard to help make it easier for Local authorities to publish their local plans and policies as data."
 designHistory: True
+artefacts:
+    - text: "Schema diagram"
+      href: "../images/diagrams/development-plan-schemas.svg"
 ---
 
 We collect and publish data on planning policies and decisions. One of the main areas we are exploring is local plans.
