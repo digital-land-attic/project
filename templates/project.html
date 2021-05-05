@@ -65,13 +65,6 @@
           </div>
       {% endfor %}
       </dl>
-      {% if project['frontmatter']["schema-diagram"] %}
-      {{ schemaDiagram({
-        "dataset": false,
-        "url": "../images/diagrams/" + project['frontmatter']['schema-diagram']['name'],
-        "alt": project['frontmatter']['schema-diagram']['alt']
-      })}}
-      {% endif %}
     {% endif -%}
   </div>
   <div class="govuk-grid-column-one-third">
