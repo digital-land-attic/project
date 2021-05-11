@@ -4,10 +4,10 @@ import os
 import markdown
 
 from frontmatter import Frontmatter
-from bin.govukify import govukify_markdown_output
 from bin.jinja_setup import env, render
 from bin.helpers import read_in_json
 from digital_land_frontend.filters import make_link
+from digital_land_frontend.markdown.govukify import govukify
 
 from markdown.extensions.toc import TocExtension
 
@@ -23,7 +23,7 @@ md = markdown.Markdown(extensions=[TocExtension(toc_depth="2-3")])
 
 def compile_markdown(md, s):
     html = md.convert(s)
-    return govukify_markdown_output(html)
+    return govukify(html)
 
 
 # making markdown compiler available to jinja templates
