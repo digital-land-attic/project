@@ -1,13 +1,11 @@
 ---
 name: "Local plan pathfinders"
-status: "in-progress"
+status: "in progress"
 one-liner: "A project to explore the policy areas that make up a local plan"
 latest_updated: "2021-05-11"
 artefacts:
-    - text:
-      href:
-    - text:
-      href:
+    - text: "Planning white paper"
+      href: "https://www.gov.uk/government/consultations/planning-for-the-future"
 ---
 
 Funded pathfinder projects intend to test digital and data aspects of the planning reforms. These reforms are set out in the [Planning White Paper](https://www.gov.uk/government/consultations/planning-for-the-future). The projects will inform policy and demonstrate how the reforms can benefit the local government sector.
