@@ -1,3 +1,7 @@
+---
+name: "List of special policy areas"
+---
+
 We've identified a number of special policy areas that might be interesting to explore. Not all of them will be relevant or important to all local planning authorities.
 
 ## List of special policy areas
