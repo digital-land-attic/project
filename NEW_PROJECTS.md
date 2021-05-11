@@ -7,6 +7,7 @@ In this folder create a markdown file, call it `index.md`.
 This file should contain
 
 ```
+---
 name:
 status:
 one-liner:
@@ -37,6 +38,7 @@ To add updates, firstly, create a folder called `updates` in the project folder.
 Then for each update create a `.md` file. For example, `changes-to-document-schema.md`. Each update should be structured like:
 
 ```
+---
 name:
 date:
 type:
@@ -54,6 +56,7 @@ Aim for a brief sentence or 2 to describe the update. Ideally add links to furth
 For any additional content pages, create a folder in the project folder called  `content`. Then for each page create a `.md` file. For example, `projects/locals-plans/alpha.md`.
 
 ```
+---
 name:
 date:
 ---
