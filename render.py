@@ -90,6 +90,26 @@ def render_project_content_pages(project):
         )
 
 
+def get_update_content(filename):
+    file_content = Frontmatter.read_file(filename)
+    return {
+        "name": file_content["attributes"].get("name"),
+        "type": file_content["attributes"].get("type"),
+        "date": file_content["attributes"].get("date"),
+        "frontmatter": file_content["attributes"],
+        "body": file_content["body"],
+    }
+
+
+def collect_updates(project_folder):
+    updates_dir = f"{project_folder}/updates"
+    if not os.path.isdir(updates_dir):
+        return []
+
+    md_files = markdown_files_only(os.listdir(updates_dir))
+    return [get_update_content(f"{updates_dir}/{f}") for f in md_files]
+
+
 # loop each project
 # loop over additional content files
 # extract frontmatter
@@ -118,7 +138,7 @@ for project in projects:
     add_to_bucket(project, project_content)
 
     # collect any additional updates
-    updates = []
+    updates = collect_updates(f"{project_dir}{project}")
 
     render(
         f"{project}/index.html",
