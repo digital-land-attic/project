@@ -1,10 +1,10 @@
 ---
-name: "List of special policy areas"
+name: "List of existing policy areas"
 ---
 
-We've identified a number of special policy areas that might be interesting to explore. Not all of them will be relevant or important to all local planning authorities.
+We've identified a number of existing policy areas that might be interesting to explore. Not all of them will be relevant or important to all local planning authorities.
 
-## List of special policy areas
+## List of existing policy areas
 
 The non-exhaustive list includes:
 
