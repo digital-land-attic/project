@@ -27,4 +27,4 @@ Over the course of the local plans pathfinder, we'll learn about what data alrea
 3. where existing policy areas exist but the corresponding data needs to be created
 4. where new policies areas are defined through the course of the project
 
-Any data relating to the existing policy areas we'll make available during the pathfinder project. However, definitions of new policy areas may not be available until public consultation.
+Any data relating to the existing policy areas we'll make available during the pathfinder project.
