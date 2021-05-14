@@ -4,7 +4,7 @@ DOCS_DIR=./docs/
 init:
 	pip install --upgrade -r requirements.txt
 
-render: render-pages copy-img
+render: updates render-pages copy-img
 	
 render-pages::
 	mkdir -p docs
@@ -22,3 +22,6 @@ commit-docs::
 copy-img::
 	mkdir -p docs/images
 	rsync -r src/images docs/
+
+updates:
+	python bin/update-project-pages.py

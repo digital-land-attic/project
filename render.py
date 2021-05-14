@@ -145,7 +145,7 @@ for project in projects:
         project_template,
         project=project_content,
         artefacts=project_content["frontmatter"].get("artefacts"),
-        updates=updates,
+        updates=sorted(updates, key=lambda x: x["date"], reverse=True),
     )
 
 

@@ -1,6 +1,7 @@
 {% extends "digital-land-frontend/dlf-base.html" %}
 {% from 'digital-land-frontend/components/feedback-panel/macro.html' import dlFeedbackPanel %}
 {%- from "digital-land-frontend/components/related-content/macro.html" import dlRelatedContent %}
+{%- from "digital-land-frontend/components/timeline/macro.html" import dlTimelineEntry %}
 
 {% block pageTitle %}{{ project.name }} | Projects | Digital Land{% endblock %}
 
@@ -69,16 +70,21 @@
 
     {% if updates %}
     <h2 class="govuk-heading-l">Updates</h2>
-    {% for update in updates %}
-      <div class="update">
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-1">{{ update.name }}</h4>
-        <div class="govuk-!-margin-bottom-1">
-          <span class="govuk-body secondary-text">{{ update.date }}</span>
-          <span class="govuk-tag govuk-tag--grey">{{ update.type }}</span>
-        </div>
-        {{ update.body|markdown|safe }}
-      </div>
-    {% endfor %}
+    <ol id="updates" class="dl-timeline">
+      {% for update in updates %}
+      {% set metaHTML -%}
+      <span>{{ update.date }}</span>
+      <span class="govuk-tag govuk-tag--grey">{{ update.type }}</span>
+      {%- endset %}
+      {{ dlTimelineEntry({
+          "heading": update.name,
+          "meta": {
+            "html": metaHTML
+          },
+          "html": update.body|markdown
+      }) }}
+      {% endfor %}
+    </ol>
     {% endif %}
 
   </div>

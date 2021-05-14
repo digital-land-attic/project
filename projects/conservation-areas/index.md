@@ -21,7 +21,7 @@ Neither of these are readily available as data. The digital land is looking into
 
 They exist in document form, are well understood as a concept and are often listed on a local authority website.
 
-They contain a geometries that are defined by local authorities. Previously, we've collected geometries from ONS so this allows us to explore what we need to do to collect them from local authorities and test our approach on real data.
+They contain geometries that are defined by local authorities. Previously, we've collected geometries (e.g. local authority boundaries) from ONS, who have experience publishing geometry data in multiple formats. Conservation area data is produced by Local Authorities so this project allows us to explore what we need to do to collect geometry data from local authorities.
 
 ## Milestones
 
