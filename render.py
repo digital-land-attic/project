@@ -39,6 +39,7 @@ def get_project_content(filename):
     return {
         "name": file_content["attributes"].get("name"),
         "status": file_content["attributes"].get("status"),
+        "description": file_content["attributes"].get("one-liner"),
         "frontmatter": file_content["attributes"],
         "body": file_content["body"],
     }
@@ -64,7 +65,7 @@ def add_to_bucket(project_path, project):
     project_summary = {
         "path": project_path,
         "name": project.get("name"),
-        "description": project.get("one-liner"),
+        "description": project.get("description"),
     }
     # append to correct bucket
     summary[project.get("status").lower()]["projects"].append(project_summary)
