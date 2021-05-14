@@ -1,6 +1,6 @@
 ---
 name: Building use class
-status: To explore
+status: backlog
 characteristics:
     identifier: building-use-class
     typology: category

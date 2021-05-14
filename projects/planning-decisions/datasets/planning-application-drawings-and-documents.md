@@ -1,6 +1,6 @@
 ---
 name: Planning application drawings and documents
-status: To explore
+status: backlog
 characteristics:
     identifier: planning-application-drawings-and-documents
     typology: document

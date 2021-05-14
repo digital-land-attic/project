@@ -1,6 +1,6 @@
 ---
 name: Tree preservation orders
-status: To explore
+status: backlog
 characteristics:
     identifier: tree-preservation-orders
     typology: geography

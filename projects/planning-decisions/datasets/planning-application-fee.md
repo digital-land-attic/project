@@ -1,6 +1,6 @@
 ---
 name: Planning application fee
-status: To explore
+status: backlog
 characteristics:
     identifier: planning-application-fee
     typology: value

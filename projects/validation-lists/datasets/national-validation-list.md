@@ -1,6 +1,6 @@
 ---
 name: National validation list
-status: To explore
+status: backlog
 characteristics:
     identifier: national-validation-list
     typology: checklist

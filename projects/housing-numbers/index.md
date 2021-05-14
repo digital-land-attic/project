@@ -1,6 +1,6 @@
 ---
 name: "Housing numbers"
-status: "To explore"
+status: backlog
 one-liner: "We are going to explore how we can standardise and help Local Authorities make available housing number metrics in policy and planning decisions."
 ---
 

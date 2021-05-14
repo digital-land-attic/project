@@ -1,6 +1,6 @@
 ---
 name: Site allocations
-status: To explore
+status: backlog
 one-liner: "We are going to explore how we can help Local Authorities make site allocations data available."
 characteristics:
     identifier: site-allocations

@@ -1,6 +1,6 @@
 ---
 name: Planning application boundary
-status: To explore
+status: backlog
 characteristics:
     identifier: planning-application-boundary
     typology: georgaphy

@@ -1,6 +1,6 @@
 ---
 name: Listed buildings
-status: To explore
+status: backlog
 characteristics:
     identifier: listed-buildings
     typology: geography
