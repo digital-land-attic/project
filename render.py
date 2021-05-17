@@ -60,15 +60,17 @@ summary = read_in_json("config/project_buckets.json")
 
 
 def add_to_bucket(project_path, project):
-    summary.setdefault(project.get("status").lower(), {"projects": []})
-    # make the summary obj
-    project_summary = {
-        "path": project_path,
-        "name": project.get("name"),
-        "description": project.get("description"),
-    }
-    # append to correct bucket
-    summary[project.get("status").lower()]["projects"].append(project_summary)
+    # don't add to bucket if redirected to another URL
+    if project["frontmatter"].get("redirect") is None:
+        summary.setdefault(project.get("status").lower(), {"projects": []})
+        # make the summary obj
+        project_summary = {
+            "path": project_path,
+            "name": project.get("name"),
+            "description": project.get("description"),
+        }
+        # append to correct bucket
+        summary[project.get("status").lower()]["projects"].append(project_summary)
 
 
 project_dir = "projects/"
