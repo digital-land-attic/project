@@ -42,9 +42,6 @@
     {% if project.status -%}
     <div>
         <strong class="govuk-tag govuk-!-margin-top-4 govuk-!-margin-bottom-0">{{ project.status }}</strong>
-        {% if project.frontmatter and project.frontmatter['designHistory'] %}
-        <span><a class="govuk-!-font-size-16 govuk-!-font-weight-regular" href="design-history">See design history</a></span>
-        {% endif %}
     </div>
     {%- endif %}
 </h1>
