@@ -5,6 +5,15 @@
 
 {% block pageTitle %}{{ project.name }} | Projects | Digital Land{% endblock %}
 
+{%- block dlHead %}
+{% if project['frontmatter']['redirect'] %}
+<!-- adding a redirect to new location
+     following: https://opensource.com/article/19/7/permanently-redirect-github-pages -->
+<meta http-equiv="refresh" content="0;url={{ project['frontmatter']['redirect']['url'] }}" />
+<link rel="canonical" href="{{ project['frontmatter']['redirect']['url'] }}">
+{% endif %}
+{% endblock -%}
+
 {% block beforeContent %}
   {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
   {% block dl_breadcrumbs %}
