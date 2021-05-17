@@ -6,6 +6,8 @@ designHistory: True
 artefacts:
     - text: "Schema diagram"
       href: "../images/diagrams/development-plan-schemas.svg"
+redirect:
+    url: "../development-plans"
 ---
 
 We collect and publish data on planning policies and decisions. One of the main areas we are exploring is local plans.
