@@ -9,6 +9,7 @@ artefacts:
       href: https://digital-land.github.io/guidance/conservation-area/
     - text: Legislation
       href: https://www.legislation.gov.uk/ukpga/1990/9/section/69
+start_date: September 2020
 ---
 
 A conservation area is an area considered worth preserving or enhancing. They are defined by local authorities and impact the allowable developments in that area.

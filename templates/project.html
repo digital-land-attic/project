@@ -70,7 +70,7 @@
 
     {% if updates %}
     <h2 class="govuk-heading-l">Updates</h2>
-    <ol id="updates" class="dl-timeline">
+    <ol id="updates" class="dl-timeline dl-timeline--with-starter-label">
       {% for update in updates %}
       {% set metaHTML -%}
       <span>{{ update.date }}</span>
@@ -84,6 +84,9 @@
           "html": update.body|markdown
       }) }}
       {% endfor %}
+      <li class="dl-timeline__start-label">
+        <h4 class="govuk-heading-s">Started{{ ' ' + project['frontmatter']['start_date'] if project['frontmatter']['start_date'] }}</h4>
+      </li>
     </ol>
     {% endif %}
 

@@ -41,7 +41,9 @@
         {#- only show section if projects have that status -#}
         {% if status_details["projects"]|length > 0 %}
         <h2 class="govuk-heading-l">{{ status|capitalize }}</h2>
+        {%- if status_details["description"] %}
         {{ status_details["description"]|markdown|safe }}
+        {% endif -%}
         <ul class="govuk-list">
         {%- for project in status_details["projects"] %}
             {{ projectListing(project) }} 
