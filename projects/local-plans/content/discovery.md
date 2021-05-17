@@ -75,7 +75,7 @@ The core mandate of PINs is to arrange inspections of local plans and their soun
 
 The systems that PINs uses to carry out their work don’t support the extraction and collection of this data. PINs collects much of the data they need from local authorities on a manual, ad hoc basis – often through desk research. Neither PINs nor the inspectors keep track of what’s in these local plans, so they aren’t able, for example, to generate data on local plans nationally without manually investigating each time.
 
-{{< govuk-section-break "xl" >}}
+<hr class="govuk-section-break govuk-!-margin-top-6 govuk-!-margin-bottom-6 govuk-section-break--visible" />
 
 ## Hypotheses
 
@@ -97,6 +97,8 @@ We arrived at 3 hypotheses based on our analysis of the discovery research.
   * efficiency of the end-to-end local plan making process
   * the transparency of planning decisions
   * the ability of local authorities and PINS to measure the delivery of local plans
+
+<hr class="govuk-section-break govuk-!-margin-top-6 govuk-!-margin-bottom-6 govuk-section-break--visible" />
 
 ## Recommendations
 
