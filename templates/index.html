@@ -47,10 +47,11 @@
     <div class="govuk-grid-column-two-thirds">
       {%- for status in projects.keys() %}
         {%- set status_details = projects[status]  -%}
+        {% set classes = "govuk-heading-l" if loop.first else "govuk-heading-l govuk-!-margin-top-6" %}
 
         {#- only show section if projects have that status -#}
         {% if status_details["projects"]|length > 0 %}
-        <h2 id="{{ status|lower|replace(' ', '-') }}" class="govuk-heading-l">{{ status|capitalize }}</h2>
+        <h2 id="{{ status|lower|replace(' ', '-') }}" class="{{ classes }}">{{ status|capitalize }}</h2>
         {%- if status_details["description"] %}
         {{ status_details["description"]|markdown|safe }}
         {% endif -%}
