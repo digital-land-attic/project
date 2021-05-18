@@ -42,7 +42,11 @@ content = download.content.decode("utf-8")
 for entry in csv.DictReader(content.splitlines()):
     project = entry["Project"]
     fname = entry["Name"].lower().replace(" ", "-")
-    markdown_file = Path("projects/{}/updates/{}".format(project, fname + ".md"))
+
+    updates_dir = Path("projects/{}/updates".format(project))
+    updates_dir.mkdir(exist_ok=True)
+
+    markdown_file = Path("{}/{}".format(updates_dir, fname + ".md"))
     if markdown_file.is_file():
         continue
 
