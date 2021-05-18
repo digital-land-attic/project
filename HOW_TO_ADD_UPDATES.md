@@ -14,7 +14,7 @@ All updates need to contain the following information:
 * the type of update (see list below)
 * the update
 
-![Example of a update on a project page](https://github.com/digital-land/project/tree/main/src/images/readmes/project-page-update-example.png)
+![Example of a update on a project page](https://raw.githubusercontent.com/digital-land/project/main/src/images/readmes/project-page-update-example.png)
 
 There are 2 ways to add updates.
 
@@ -22,7 +22,7 @@ There are 2 ways to add updates.
 
 You can add an update to the [`Project updates`](https://docs.google.com/spreadsheets/d/1hOnXFXQFOt_pYIs6haCzym1eLPzBupvTQP0DWZh37ww/edit) spreadsheet.
 
-![Screenshot of Project updates spreadsheet with 2 rows](https://github.com/digital-land/project/tree/main/src/images/readmes/updates-spreadsheets-screenshot.png)
+![Screenshot of Project updates spreadsheet with 2 rows](https://raw.githubusercontent.com/digital-land/project/main/src/images/readmes/updates-spreadsheets-screenshot.png)
 
 Each row of this spreadsheet will be turned into an update that appears on the project pages.
 
