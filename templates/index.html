@@ -33,6 +33,16 @@
 {% block content %}
 <h1 class="govuk-heading-xl">Projects</h1>
 <p class="govuk-body-l">We're collecting and publishing land and housing data to build a national picture of planning.</p>
+<p class="govuk-body">Project groups</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="#in-progress">In progress</a></li>
+  <li><a href="#ongoing">Ongoing</a></li>
+  <li><a href="#backlog">Backlog</a></li>
+  <li><a href="#completed">Completed</a></li>
+</ul>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {%- for status in projects.keys() %}
@@ -40,7 +50,7 @@
 
         {#- only show section if projects have that status -#}
         {% if status_details["projects"]|length > 0 %}
-        <h2 class="govuk-heading-l">{{ status|capitalize }}</h2>
+        <h2 id="{{ status|lower|replace(' ', '-') }}" class="govuk-heading-l">{{ status|capitalize }}</h2>
         {%- if status_details["description"] %}
         {{ status_details["description"]|markdown|safe }}
         {% endif -%}
