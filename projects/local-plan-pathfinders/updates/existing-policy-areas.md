@@ -1,5 +1,5 @@
 ---
-name: "existing-policy-areas"
+name: "Existing policy areas"
 date: "2021-05-11"
 type: "update"
 ---
