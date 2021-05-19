@@ -17,6 +17,7 @@ clean::
 	
 commit-docs::
 	git add docs
+	git add projects
 	git diff --quiet && git diff --staged --quiet || (git commit -m "Rebuilt docs $(shell date +%F)"; git push origin $(BRANCH))
 
 copy-img::
