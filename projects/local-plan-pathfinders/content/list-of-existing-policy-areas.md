@@ -23,7 +23,7 @@ The non-exhaustive list includes:
 * Greater London archaeological priority areas
 * Green belt
 * Heritage at risk
-* Heritage coast
+* [Heritage coast](https://digital-land.github.io/heritage-coast/)
 * Historic rural landscapes
 * HS2 safeguarded areas
 * Irreplaceable habitats
