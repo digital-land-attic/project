@@ -1,6 +1,6 @@
 ---
 name: Planning decision certificate
-status: To explore
+status: backlog
 characteristics:
     identifier: planning-decision-certificate
     typology: document

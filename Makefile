@@ -4,7 +4,7 @@ DOCS_DIR=./docs/
 init:
 	pip install --upgrade -r requirements.txt
 
-render: render-pages copy-img
+render: updates render-pages copy-img
 	
 render-pages::
 	mkdir -p docs
@@ -17,8 +17,12 @@ clean::
 	
 commit-docs::
 	git add docs
+	git add projects
 	git diff --quiet && git diff --staged --quiet || (git commit -m "Rebuilt docs $(shell date +%F)"; git push origin $(BRANCH))
 
 copy-img::
 	mkdir -p docs/images
 	rsync -r src/images docs/
+
+updates:
+	python bin/update-project-pages.py

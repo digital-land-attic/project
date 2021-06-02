@@ -1,6 +1,6 @@
 ---
 name: Site of special scientific interest
-status: To explore
+status: backlog
 one-liner: "We are going to explore how we can make data on Sites of Special Scientific Interest easier to find, use and trust."
 characteristics:
     identifier: site-of-special-scientific-interest

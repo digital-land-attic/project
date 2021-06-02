@@ -1,6 +1,6 @@
 ---
 name: "Nature conservation areas"
-status: "To explore"
+status: backlog
 one-liner: "We are going to explore how we can make data on nature conservation easier to find, use and trust."
 ---
 

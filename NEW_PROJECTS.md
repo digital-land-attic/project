@@ -68,3 +68,18 @@ date:
 There are a number of optional parameters to use with additional content pages. To use them add to the frontmatter of the markdown file. These options are:
 
 * `displayContents` - if set to `True` it will change the layout of the page to include a contents section to the left of the main body of content.
+
+
+## Optional extras
+
+### Redirects
+
+You can redirect a project page if you need to. For example, if you have renamed the project but still need an old URL to work you can redirect the page to the new location.
+
+Use the `redirect` option in the frontmatter.
+
+For example, to redirect to the `development-plans` project page you add the following
+```
+redirect:
+    url: "../development-plans"
+```

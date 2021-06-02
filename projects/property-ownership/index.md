@@ -1,6 +1,6 @@
 ---
 name: Property ownership
-status: To explore
+status: backlog
 one-liner: "We are going to explore how we can help Local Authorities make Neighbourhood Plan data available."
 characteristics:
     identifier: property-ownership

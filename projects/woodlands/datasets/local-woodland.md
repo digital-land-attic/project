@@ -1,6 +1,6 @@
 ---
 name: Local woodland
-status: To explore
+status: backlog
 characteristics:
     identifier: local-woodland
     typology: geography

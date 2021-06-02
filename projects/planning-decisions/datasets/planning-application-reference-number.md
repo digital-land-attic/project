@@ -1,6 +1,6 @@
 ---
 name: Planning application reference number
-status: To explore
+status: backlog
 characteristics:
     identifier: planning-application-reference-number
     typology: 

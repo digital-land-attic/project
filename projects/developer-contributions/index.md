@@ -1,6 +1,6 @@
 ---
 name: Developer contributions
-status: "in progress"
+status: "ongoing"
 one-liner: "We are building a national picture of developer contributions, including Section 106 and CIL contributions"
 characteristics:
     identifier: developer-agreement

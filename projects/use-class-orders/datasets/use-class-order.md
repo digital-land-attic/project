@@ -1,6 +1,6 @@
 ---
 name: Use class order
-status: To explore
+status: backlog
 characteristics:
     identifier: use-class-order
     typology: category

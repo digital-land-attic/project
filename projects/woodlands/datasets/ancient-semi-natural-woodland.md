@@ -1,6 +1,6 @@
 ---
 name: Ancient semi-natural woodland
-status: To explore
+status: backlog
 characteristics:
     identifier: ancient-semi-natural-woodland
     typology: geography

@@ -1,6 +1,6 @@
 ---
 name: Standard application form
-status: To explore
+status: backlog
 characteristics:
     identifier: standard-application-form
     data provider and maintainer: local planning authorities

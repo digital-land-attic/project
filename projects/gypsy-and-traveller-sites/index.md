@@ -1,6 +1,6 @@
 ---
 name: Gypsy and traveller sites
-status: To explore
+status: backlog
 one-liner: "We are going to explore how we can help Local Authorities make Gypsy and Traveller Sites data available."
 characteristics:
     identifier: gypsy-and-traveller-sites

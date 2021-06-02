@@ -39,6 +39,7 @@ def get_project_content(filename):
     return {
         "name": file_content["attributes"].get("name"),
         "status": file_content["attributes"].get("status"),
+        "description": file_content["attributes"].get("one-liner"),
         "frontmatter": file_content["attributes"],
         "body": file_content["body"],
     }
@@ -59,15 +60,17 @@ summary = read_in_json("config/project_buckets.json")
 
 
 def add_to_bucket(project_path, project):
-    summary.setdefault(project.get("status").lower(), {"projects": []})
-    # make the summary obj
-    project_summary = {
-        "path": project_path,
-        "name": project.get("name"),
-        "description": project.get("one-liner"),
-    }
-    # append to correct bucket
-    summary[project.get("status").lower()]["projects"].append(project_summary)
+    # don't add to bucket if redirected to another URL
+    if project["frontmatter"].get("redirect") is None:
+        summary.setdefault(project.get("status").lower(), {"projects": []})
+        # make the summary obj
+        project_summary = {
+            "path": project_path,
+            "name": project.get("name"),
+            "description": project.get("description"),
+        }
+        # append to correct bucket
+        summary[project.get("status").lower()]["projects"].append(project_summary)
 
 
 project_dir = "projects/"
@@ -145,7 +148,7 @@ for project in projects:
         project_template,
         project=project_content,
         artefacts=project_content["frontmatter"].get("artefacts"),
-        updates=updates,
+        updates=sorted(updates, key=lambda x: x["date"], reverse=True),
     )
 
 

@@ -9,19 +9,20 @@ artefacts:
       href: https://digital-land.github.io/guidance/conservation-area/
     - text: Legislation
       href: https://www.legislation.gov.uk/ukpga/1990/9/section/69
+start_date: September 2020
 ---
 
-A conservation area is an area considered worth preserving or enhancing. They are defined by local authorities and impact the allowable developments in that area.
+A conservation area is an area of environmental or historical interest or importance considered worth preserving or enhancing. They are defined by local authorities and impact on developments as conservation areas are protected against changes by law.
 
-Conservation areas have been around since 1967. This means a lot of the information about a conservation area is locked up in documents. And the boundary that defines the area the conservation area covers is usually held in a Local authority's GIS.
+Conservation areas have been around since 1967 which means a lot of the information is locked up in documents. Those historical documents can range from press announcements, archive paper records and PDFs. The boundary defining the conservation area is usually held in a Local authority's GIS (Geographic Information System). GIS software utilises a framework for collecting, analyzing and managing data digitally.
 
-Neither of these are readily available as data. The digital land is looking into conservation areas to see what data can be produced from the information available and how this data can be combined to make a national dataset.
+Neither of these sources are readily available as data. GIS data isn’t always easily accessible meaning we can’t retrieve, find and use the data we need or there can be issues with data quality. Digital Land is interested in seeing what data can be produced from available information and how it can be combined to make a national dataset.
 
 ## Why we are looking at conservation areas
 
-They exist in document form, are well understood as a concept and are often listed on a local authority website.
+Conservation areas exist in document form, are well understood as a concept and are often listed on a local authority website.
 
-They contain a geometries that are defined by local authorities. Previously, we've collected geometries from ONS so this allows us to explore what we need to do to collect them from local authorities and test our approach on real data.
+Previously, we've collected geometries from ONS but we want to explore local authority defined geometries. This project allows us to investigate and test what we need to do to collect real data from local authorities.
 
 ## Milestones
 

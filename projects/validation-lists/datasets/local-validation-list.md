@@ -1,6 +1,6 @@
 ---
 name: Local validation list
-status: To explore
+status: backlog
 characteristics:
     identifier: local-validation-list
     typology: geography

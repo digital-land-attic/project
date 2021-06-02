@@ -1,6 +1,6 @@
 ---
 name: Local heritage site
-status: To explore
+status: backlog
 characteristics:
     identifier: local-heritage-site
 --- 

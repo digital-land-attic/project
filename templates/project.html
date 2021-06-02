@@ -1,8 +1,18 @@
 {% extends "digital-land-frontend/dlf-base.html" %}
 {% from 'digital-land-frontend/components/feedback-panel/macro.html' import dlFeedbackPanel %}
 {%- from "digital-land-frontend/components/related-content/macro.html" import dlRelatedContent %}
+{%- from "digital-land-frontend/components/timeline/macro.html" import dlTimelineEntry %}
 
 {% block pageTitle %}{{ project.name }} | Projects | Digital Land{% endblock %}
+
+{%- block dlHead %}
+{% if project['frontmatter']['redirect'] %}
+<!-- adding a redirect to new location
+     following: https://opensource.com/article/19/7/permanently-redirect-github-pages -->
+<meta http-equiv="refresh" content="0;url={{ project['frontmatter']['redirect']['url'] }}" />
+<link rel="canonical" href="{{ project['frontmatter']['redirect']['url'] }}">
+{% endif %}
+{% endblock -%}
 
 {% block beforeContent %}
   {% include 'digital-land-frontend/partials/dl-prototype-banner.html' %}
@@ -32,9 +42,6 @@
     {% if project.status -%}
     <div>
         <strong class="govuk-tag govuk-!-margin-top-4 govuk-!-margin-bottom-0">{{ project.status }}</strong>
-        {% if project.frontmatter and project.frontmatter['designHistory'] %}
-        <span><a class="govuk-!-font-size-16 govuk-!-font-weight-regular" href="design-history">See design history</a></span>
-        {% endif %}
     </div>
     {%- endif %}
 </h1>
@@ -69,16 +76,24 @@
 
     {% if updates %}
     <h2 class="govuk-heading-l">Updates</h2>
-    {% for update in updates %}
-      <div class="update">
-        <h4 class="govuk-heading-s govuk-!-margin-bottom-1">{{ update.name }}</h4>
-        <div class="govuk-!-margin-bottom-1">
-          <span class="govuk-body secondary-text">{{ update.date }}</span>
-          <span class="govuk-tag govuk-tag--grey">{{ update.type }}</span>
-        </div>
-        {{ update.body|markdown|safe }}
-      </div>
-    {% endfor %}
+    <ol id="updates" class="dl-timeline dl-timeline--with-starter-label">
+      {% for update in updates %}
+      {% set metaHTML -%}
+      <span>{{ update.date }}</span>
+      <span class="govuk-tag govuk-tag--grey">{{ update.type }}</span>
+      {%- endset %}
+      {{ dlTimelineEntry({
+          "heading": update.name,
+          "meta": {
+            "html": metaHTML
+          },
+          "html": update.body|markdown
+      }) }}
+      {% endfor %}
+      <li class="dl-timeline__start-label">
+        <h4 class="govuk-heading-s">Started{{ ' ' + project['frontmatter']['start_date'] if project['frontmatter']['start_date'] }}</h4>
+      </li>
+    </ol>
     {% endif %}
 
   </div>

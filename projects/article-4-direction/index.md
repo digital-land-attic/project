@@ -1,6 +1,6 @@
 ---
 name: Article 4 direction
-status: To explore
+status: backlog
 one-liner: "We are going to explore how we can help Local Authorities make Article 4 direction data available."
 characteristics:
     identifier: article-4-direction

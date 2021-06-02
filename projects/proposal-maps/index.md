@@ -1,6 +1,6 @@
 ---
 name: Proposal maps
-status: To explore
+status: backlog
 one-liner: "We are going to explore how we can help Local Authorities make proposal maps data available."
 characteristics:
     identifier: proposal-maps
