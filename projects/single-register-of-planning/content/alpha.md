@@ -1,10 +1,9 @@
 ---
-name: Alpha report
+name: "Alpha: A planning application data pattern"
+displayContents: true
 ---
 
-## Alpha: A planning application data pattern
-
-### Introduction
+## Introduction
 
 What became clear during our research was that the value in planning permission data is contingent on its interoperability. It’s for this reason that we’ve seen so many attempts over the years to standardise planning data into a particular schema, or to extract and transform it into a single aggregated database.
 
@@ -25,7 +24,7 @@ The UK Government was one of the early leaders in researching and developing des
 Design patterns help government departments prototype and build services quicker, and help them strike a sensible balance between maintaining consistency for the end user and staying flexible enough to properly address the specific service or workflow at hand.
 
 
-### Developing a design pattern for planning application data
+## Developing a design pattern for planning application data
 
 Working with our conceptual model of the planning process, and our understanding of the types of data that PropTech companies would find most valuable, we began iterating a design pattern for how planning authorities should publish planning application data.
 
@@ -38,7 +37,7 @@ You can [read the latest draft of the design pattern here](https://docs.google.c
 We published the draft online, along with a set of questions we were actively investigating about it, and re-contacted our Discovery phase participants to get their feedback on the design pattern.
 
 
-#### Feedback from software providers
+### Feedback from software providers
 
 Our main question for software providers was whether their systems provide access to the data in the design pattern. Especially:
 
@@ -57,7 +56,7 @@ To our surprise, the software providers were optimistic about the availability o
 *   Data about development categories and use classes _can_ be stored in their systems, but, in their experience, this information often isn’t filled in by the applicant or the planning officer.
 
 
-#### Feedback from local authorities
+### Feedback from local authorities
 
 The feedback we received from local authorities focused on interoperability, licensing and access issues, and the data publishing process.
 
@@ -80,7 +79,7 @@ We were interested in testing whether we could encourage local authorities to sh
 We asked local authority officers how they’d expect to share the data we were asking for, and those that had a view said they’d expect to push files to MHCLG (eg: via FTP, or email) rather than hosting a data feed on their own website. However, if the data feed hosting was built into their existing planning application portal (for example, via an update from their software provider), we expect they wouldn’t have an issue with that.
 
 
-#### Feedback from users
+### Feedback from users
 
 The feedback we received from users focused on publishing geodata and the specifics of updates and filtering.
 
@@ -99,12 +98,12 @@ We confirmed that most users would be happy with the data updating daily. One or
 We also received feedback from  data users about what kind of filtering they would like to see on a feed of data. For example, to help consumers of the data quickly filter to only the applications they’re interested in, we added “Consent type” and “Development type” fields to the design pattern. We also used feedback from this stage to clarify the fields around use classes, floorspace, and bedrooms per unit.
 
 
-### Testing the design pattern with real data
+## Testing the design pattern with real data
 
 As well as testing the design pattern verbally with our discovery phase participants, we wanted to test the design pattern against real data, to understand how feasible the data collection would be.
 
 
-#### Collecting data
+### Collecting data
 
 Our first step was to ask our local authority contacts for samples of their planning application data. This turned out to be significantly more difficult than we anticipated. While planning officers were happy to contribute small chunks of time for research calls, many couldn’t justify the time that would be required to extract data for us.
 
@@ -129,7 +128,7 @@ In the end, we were able to collect a good sample of planning application data, 
 *   Barrow Borough Council
 
 
-#### Learning from the data
+### Learning from the data
 
 A significant number of the datasets followed the LGA planning data schema – although it is notable that many of these appear to have been one-off exports, and haven’t been updated since the LGA incentive scheme ended in 2016.
 
@@ -146,14 +145,14 @@ In terms of geodata, the plain text site address was universally available. Some
 As with boundary polygons, none of the _existing_ datasets included information about use classes or bedrooms per unit, and none made any attempt to describe the overall “type” of development taking place (eg: change of use, demolition, new build). Given the potential value of this data to our discovery participants (and the feedback we’ve had from software providers, that this data is structured and available inside their systems) it’s clear that a way will need to be found to expose this data in future data feeds, although further work will need to be done to decide on a format, since it this per-unit and per-class data is necessarily more complex than a single figure per planning application.
 
 
-#### Developing an example technical schema
+### Developing an example technical schema
 
 Alongside this work, we also developed a technical schema to accompany the planning application data design pattern. While the pattern was intended to _inform_ the data made available in other standards/schemas, this example technical schema gave us an opportunity to show the minimum dataset that would satisfy the requirements of the design pattern.
 
 You can [read the latest version of the example schema here](https://docs.google.com/document/d/1hMkl7DG8WNym67J2L1eVhFG2xuLalDmQiH5YCIf4HZU/edit?usp=sharing).
 
 
-#### Prototype translation / validation tool
+### Prototype translation / validation tool
 
 The technical schema also helped us test a translation / validation tool we were developing, as part of our investigation into how local authority data in different formats could be automatically consolidated into a single schema. Our goal was to show whether a translation / validation tool like this could be run by MHCLG, as the service that collects and standardises the data, to reduce the burden on local authorities.
 
@@ -161,7 +160,7 @@ We investigated a number of solutions for this translation layer, but settled on
 
 You can [try out the prototype here](https://planning-permissions:MHCLG@planning-permissions.herokuapp.com) – for a quick start, select “london-100.csv” as the input file, and “IDOX” as the schema template.
 
-[![](../discovery/example.png)](../discovery/example.png)
+[![](../../images/srop-example.png)](../../images/srop-example.png)
 
 The transformation logic being stored in a JSON config file also opens up the possibility for configuration to be made by a non-technical user, via a web interface, and for the tool to then read and use that configuration for its automatic processing.
 
@@ -176,7 +175,7 @@ The previous sections have described the findings from the work completed so far
 
 Implementing a standard like this successfully across over 350 planning authorities presents a big technical challenge that needs to accommodate a wide range of technical skills and resources among planning authorities, a variety of back office management systems in use and a diversity of different ways of managing the planning process.
 
-#### Principles
+### Principles
 
 Our research work suggested a set of a principles that we can use to help guide the technical approach:
 
@@ -187,11 +186,11 @@ Our research work suggested a set of a principles that we can use to help guide 
 *   **Consider making it statutory:** If you want full coverage, it will need to be a statutory requirement, but this is likely to require new burdens payments.
 
 
-#### Technical model
+### Technical model
 
 A system to collect data planning application data could be implemented in a number of ways, but we worked with the MHCLG Digital Land team to design a model consistent with their strategy of decentralised management of data.
 
-[![](../discovery/technical_model.png)](../discovery/technical_model.png)
+[![](../../images/srop-technical_model.png)](../../images/srop-technical_model.png)
 
 The diagram above illustrates this approach. The different components are described below:
 
@@ -304,10 +303,10 @@ The interventions we recommend MHCLG consider making are described below:
 Interventions 1 and 2 need to be made together if either is to be worthwhile. If one or both of these are not possible, the overall outcome can still be the same, but this would put more work onto planning officers to populate the information in intervention 3. Most importantly, any new systems have to be flexible where possible to account for future policies and changes in planning law. A focus on minimum requirements, consistency in the data pattern, and reducing burden on planning officers will be critical elements in keeping this flexibility.
 
 
-### Further work
+## Further work
 
 
-#### Introduction
+### Introduction
 
 This 12-week project has been focused on discovery and alpha research into how to make data on planning applications available across all planning authorities in England to a level that would meet the needs of users of this data.
 
@@ -320,7 +319,7 @@ We recommend therefore, that in order to further test the practicality of the da
 This section of the report describes what this further work should seek to achieve. It starts by describing some outstanding questions that need to be answered by this work and then outlines some aspects of a recommended approach to testing them.
 
 
-#### Questions to answer
+### Questions to answer
 
 The work completed has given us a clear sense of what we know and what do not yet know, but need to know. The questions that need to be answered in a further phase of work are stated below, grouped by theme.
 
@@ -427,14 +426,14 @@ Along with the pilot work, some prototyping work could be completed to test out 
 *   **The central collector** and in particular the translator/validator part of it, could be further developed, using the real data obtained from planning authorities in the pilot. It could be tested with planning authority staff to understand whether they could do the translation themselves or whether this work would have to be done centrally by MHCLG.
 *   **The central index**, which has yet to be designed or prototyped, could also be developed and tested with data re-users to ensure it meets their needs. This could also be done at a later stage as a separate project.
 
-### More information
+## More information
 
-#### Project Page: Info and Blog
+### Project Page: Info and Blog
 
 [https://digital-land.github.io/project/single-register-of-planning/](https://digital-land.github.io/project/single-register-of-planning/)
 
 
-#### Prototype Code: early alpha for collector
+### Prototype Code: early alpha for collector
 
 [https://github.com/mysociety/planning-permissions](https://github.com/mysociety/planning-permissions)
 

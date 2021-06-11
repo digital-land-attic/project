@@ -188,7 +188,7 @@ In order to understand these user needs and the problems underlying them current
 
 A clear model of a domain is a necessary step in defining a data model. As we progressed through discovery, we tried to synthesise the different concepts that relate to planning applications and their relationships into a diagram.
 
-[![](pa_model.png)](pa_model.png)
+[![](../../images/srop-pa_model.png)](../images/srop-pa_model.png)
 
 The diagram went through a number of different iterations, but the most up to date is shown above.
 
