@@ -64,3 +64,13 @@ We will also be identifying gaps in our knowledge and looking to schedule more c
 <p>
 	<a class="govuk-link govuk-body-l" href="/project/single-register-of-planning/alpha">Alpha</a> <strong class="govuk-tag">done</strong>
 </p>
+
+
+## Related blog posts
+
+* [A design pattern for planning permission data](https://digital-land.github.io/blog-post/design-pattern-for-planning-permission-data/) by Zarino Zappia
+* [Register of planning application data: Discovery findings](https://digital-land.github.io/blog-post/register-of-planning-discovery-findings/) by Mike Thompson
+* [A short history of planning application data projects](https://digital-land.github.io/blog-post/a-short-history-of-planning-application-data-projects/) by Mike Thompson
+* [Planning permissions ‘Single register of planning’ discovery: Sprint notes 29 Jan - 12 Feb 2019](https://digital-land.github.io/blog-post/planning-project-sprint-notes-12-feb/) by Emily Robertson-Knowlton
+* [Planning permissions ‘Single register of planning’ discovery: Sprint notes 14-28 Jan 2019](https://digital-land.github.io/blog-post/planning-project-sprint-notes-28-jan/) by Emily Robertson-Knowlton
+* [Kicking off the Planning Permissions project](https://digital-land.github.io/blog-post/kicking-off-the-planning-permissions-project/) by Emily Robertson-Knowlton
