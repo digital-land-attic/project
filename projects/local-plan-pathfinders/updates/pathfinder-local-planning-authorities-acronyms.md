@@ -5,6 +5,7 @@ type: "update"
 ---
 
 We are gathering acronyms from our sites data workshops to clarify their meaning:
+
 - HELLA - Housing Employment Land Availability Assessment
 - ELR - Employment Land Review
 - AMR - Annual Monitoring Report
