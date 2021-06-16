@@ -1,5 +1,5 @@
 ---
-name: "pathfinder-local-planning-authorities-acronyms"
+name: "Acronyms used by Local planning authorities"
 date: "2021-06-15"
 type: "update"
 ---
