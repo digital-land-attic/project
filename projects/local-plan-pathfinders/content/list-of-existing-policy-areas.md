@@ -8,27 +8,27 @@ We've identified a number of existing policy areas that might be interesting to 
 
 The non-exhaustive list includes:
 
-* Areas of outstanding natural beauty
-* Article 4 Directions
+* [Areas of outstanding natural beauty](https://digital-land.github.io/area-of-outstanding-natural-beauty)
+* [Article 4 Directions](https://digital-land.github.io/article-4-direction)
 * Assets of community value
-* Battlefields
-* Building preservation notices
-* Certificates of immunity
+* [Battlefields](https://digital-land.github.io/battlefield)
+* [Building preservation notices](https://digital-land.github.io/building-preservation-notice)
+* [Certificates of immunity](https://digital-land.github.io/certificate-of-immunity)
 * Coalfield
 * COMAH – major hazard sites
-* Conservation areas
+* [Conservation areas](https://digital-land.github.io/conservation-area)
 * Flood zone 1
 * Flood zone 2
 * Flood zone 3
 * Greater London archaeological priority areas
-* Green belt
-* Heritage at risk
+* [Green belt](https://digital-land.github.io/green-belt)
+* [Heritage at risk](https://digital-land.github.io/heritage-at-risk)
 * [Heritage coast](https://digital-land.github.io/heritage-coast/)
 * Historic rural landscapes
 * HS2 safeguarded areas
 * Irreplaceable habitats
 * Land ownership boundary
-* Listed buildings
+* [Listed buildings](https://digital-land.github.io/listed-building)
 * Locally listed areas
 * Long protected woodland
 * Metropolitan open land (London)
@@ -38,20 +38,20 @@ The non-exhaustive list includes:
 * Neighbourhood plans
 * Non-designated archeology
 * Nuclear zones
-* Parks and gardens
+* [Parks and gardens](https://digital-land.github.io/park-and-garden)
 * Proposed ramsar sites
 * Protected views
-* Protected wreck sites
-* Ramsar sites
+* [Protected wreck sites](https://digital-land.github.io/protected-wreck-site)
+* [Ramsar sites](https://digital-land.github.io/ramsar)
 * Safeguarded aerodromes
 * Safeguarded military explosives sites
 * Safeguarded wharves
-* Scheduled monuments
-* Sites of special scientific interest
-* Special areas of conservation
+* [Scheduled monuments](https://digital-land.github.io/scheduled-monument)
+* [Sites of special scientific interest](https://digital-land.github.io/site-of-special-scientific-interest)
+* [Special areas of conservation](https://digital-land.github.io/special-area-of-conservation)
 * Special protection areas
 * The broads
 * Transport (under TCPA route)
 * Tree preservation orders
-* World heritage sites
+* [World heritage sites](https://digital-land.github.io/world-heritage-site)
 
