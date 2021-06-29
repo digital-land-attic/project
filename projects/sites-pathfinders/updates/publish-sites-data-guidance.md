@@ -1,5 +1,5 @@
 ---
-name: "publish-sites-data-guidance.md"
+name: "Publish sites data guidance"
 date: "2021-06-23"
 type: "update"
 ---
