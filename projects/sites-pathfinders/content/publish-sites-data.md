@@ -2,7 +2,9 @@
 title: "Publish your sites data"
 slug: "publish-sites-data"
 summary: "Follow our guidance on publishing sites data."
+
 ---
+## Publish your sites data
 
 This guidance is to help pathfinder local planning authorities publish a list of development sites in a standardised format.
 
@@ -11,9 +13,6 @@ If you use a [Geographic information system (GIS)](https://en.wikipedia.org/wiki
 The [shapefile] (https://en.wikipedia.org/wiki/Shapefile) and .geojson file will give us geographical sites data which has the potential to be plotted onto a map.
 
 Publicly available local authority sites data would provide an overall picture of sites in a given area including those that are suitable for future development. With easily accessible data, it can be used by government, local authorities, [PropTech](https://en.wikipedia.org/wiki/Property_technology) and others to develop services, tools and for decision making.
-
-
-## Publish your sites data
 
 
 ## What information do you need to provide for your sites data?
