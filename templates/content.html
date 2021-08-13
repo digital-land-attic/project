@@ -1,7 +1,7 @@
 {% extends "digital-land-frontend/dlf-base.html" %}
 {% from 'digital-land-frontend/components/feedback-panel/macro.html' import dlFeedbackPanel %}
 
-{% set project_name = project|replace("-", " ")|capitalize %}
+{% set project_name = fm['project_name'] if fm['project_name'] else project|replace("-", " ")|capitalize %}
 
 {% block pageTitle %}{{ fm.name }} | Projects | Digital Land{% endblock %}
 
