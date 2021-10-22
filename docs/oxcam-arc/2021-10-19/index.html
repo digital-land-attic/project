@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template ">
   <head>
     <meta charset="utf-8">
-    <title>OxCam Arc evidence data  | Projects | Digital Land</title>
+    <title>OxCam Arc data alpha sprint notes | Projects | Digital Land</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
     
@@ -20,8 +20,6 @@
 	
 	<link href="https://digital-land.github.io/stylesheets/dl-frontend.css" rel="stylesheet" />
 	
-
-
     
     
     <meta property="og:image" content="/images/govuk-opengraph-image.png">
@@ -146,7 +144,13 @@
     
   
     
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">OxCam Arc evidence data </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/project/oxcam-arc">OxCam Arc</a>
+    </li>
+    
+  
+    
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">OxCam Arc data alpha sprint notes</li>
     
   
   </ol>
@@ -155,69 +159,57 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
           
-<span class="govuk-caption-xl">Project</span>
-<h1 class="govuk-heading-xl">
-    OxCam Arc evidence data 
-    <div>
-        <strong class="govuk-tag govuk-!-margin-top-4 govuk-!-margin-bottom-0">in progress</strong>
-    </div>
-</h1>
+<span class="govuk-caption-xl">OxCam Arc</span>
+<h1 class="govuk-heading-xl">OxCam Arc data alpha sprint notes</h1>
 
 <div class="govuk-grid-row">
+
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l" id="why-we-are-interested-in-the-futuregov-oxcam-arc-project">Why we are interested in the FutureGov OxCam Arc project</h2>
-<p class="govuk-body">The <a href="https://www.gov.uk/government/publications/oxford-cambridge-arc/oxford-cambridge-arc">Oxford-Cambridge Arc (OxCam Arc)</a> is an area between Oxford, Milton Keynes and Cambridge with 18 local planning authorities within that boundary. The government has identified it as a <a href="https://www.gov.uk/government/news/government-plan-to-transform-oxford-cambridge-arc-into-uk-s-fastest-growing-economic-region">‘national economic priority’</a>, and is in the process of developing a <a href="https://www.gov.uk/government/publications/planning-for-sustainable-growth-in-the-oxford-cambridge-arc-spatial-framework/planning-for-sustainable-growth-in-the-oxford-cambridge-arc-an-introduction-to-the-spatial-framework#what-the-spatial-framework-will-do">'Spatial Framework'</a>, a strategic plan to support sustainable growth of the area up to 2050.</p>
-<p class="govuk-body">We will be working with the OxCam team in MHCLG and <a href="https://wearefuturegov.com/">FutureGov</a>, a design agency. FutureGov will initially pinpoint a dataset that impacts on future local planning in the Arc. The OxCam team and FutureGov will identify what users need from the data, and how it can be collected and maintained. </p>
-<p class="govuk-body">This data will be collected as part of the evidence base work for the Spatial Framework. Digital Land will clean this data and put it into our format to test our pipeline. <a href="https://www.gov.uk/guidance/plan-making">‘Local Plan Evidence’</a> traditionally is in the form of reports and local authorities often don’t have access to the raw data. </p>
-<p class="govuk-body">The project aims to separate administrative documents from the data collection to enable possible digital use and innovation. The OxCam team will use the cleaned and structured data we provide to explore creating a common, accessible data repository (platform) for the OxCam Arc, which local authorities would be able to access.</p>
-<h2 class="govuk-heading-l" id="what-are-we-focused-on">What are we focused on</h2>
-<p class="govuk-body">From this project, we will learn how to collect evidence data, process it, and provide it to local authorities and our MHCLG colleagues.</p>
+    <p class="govuk-body">In June, the OxCam Unit at DLUHC <a href="https://digital-land.github.io/project/oxcam-arc/2021-08-12/">kicked-off</a> an alpha project with their supplier FutureGov. This is part of the team’s commitment to use data, evidence and digital technology to support the development of the <a href="https://www.gov.uk/government/publications/planning-for-sustainable-growth-in-the-oxford-cambridge-arc-spatial-framework/planning-for-sustainable-growth-in-the-oxford-cambridge-arc-an-introduction-to-the-spatial-framework">Spatial Framework</a> for the <a href="https://www.gov.uk/government/publications/oxford-cambridge-arc/oxford-cambridge-arc#what-is-the-arc">Oxford-Cambridge Arc</a> – the area formed of: Oxfordshire, Bedfordshire, Buckinghamshire, Northamptonshire and Cambridgeshire.</p>
+<p class="govuk-body"><a href="https://res.cloudinary.com/digital-land/image/upload/v1628759665/Oxcam_map_wn_1_wlo2qe.jpg" title="Conservation area page"><img class="dl-image"  src="https://res.cloudinary.com/digital-land/image/upload/v1628759665/Oxcam_map_wn_1_wlo2qe.jpg" alt="OxCam Arc map"></a></p>
+<p class="govuk-body">In the weeks that have followed, the joint team has dived deeply into research, synthesis, design and testing to inform best practice for guidance on evidence base production and use of data to support planning and decision-making in the OxCam Arc. Since the start, the team has used an agile approach to the project delivery, working in two-week sprints to quickly iterate and test with a wide range of users across local authorities, central government and other key stakeholders.</p>
+<h2 class="govuk-heading-l" id="testing-assumptions-and-focusing-research">Testing assumptions and focusing research</h2>
+<p class="govuk-body">To guide our research, we broke down the main hypotheses from discovery and mapped out a long list of granular assumptions (such as, “It’s possible to give a prescriptive approach and clear guidance on how data is collected, what needs to be captured, presented and uploaded”). We then prioritised the hypotheses by scoring them on an “impact vs confidence” scale. This led to a smaller number of focused assumptions to test with our users in research, but also to use as the basis for prototyping solutions.</p>
+<h2 class="govuk-heading-l" id="research">Research</h2>
+<p class="govuk-body">We’ve worked with policy teams across DLUHC, as well as PINS inspectors, barristers, local authority planners and consultants, conducting over 30 interviews, to understand how and why an evidence base is produced for planning and decision-making in the Arc, and what are the user needs of those accessing evidence base studies and their foundational data.</p>
+<p class="govuk-body">From our user research, we identified personas for our primary group of users, namely central government planners and local authority planners.</p>
+<p class="govuk-body"><a href="https://res.cloudinary.com/digital-land/image/upload/v1634804463/key-users_tu77z2.jpg" title="Key users"><img class="dl-image"  src="https://res.cloudinary.com/digital-land/image/upload/v1634804463/key-users_tu77z2.jpg" alt="Key users"></a></p>
+<p class="govuk-body"><a href="https://res.cloudinary.com/digital-land/image/upload/v1634804463/amanda_pjqcfp.jpg" title="Amanda"><img class="dl-image"  src="https://res.cloudinary.com/digital-land/image/upload/v1634804463/amanda_pjqcfp.jpg" alt="Amanda"></a></p>
+<p class="govuk-body">We identified the following key user needs:</p>
+<h3 class="govuk-heading-m" id="as-a-local-planning-officer-in-the-oxcam-arc">As a local planning officer in the OxCam Arc</h3>
 <ul class="govuk-list govuk-list--bullet">
-<li>We will take the dataset collected by the OxCam team and put it through our pipeline to transform and harmonise the data. </li>
-<li>We will test our pipeline and the data it produces with feedback from the OxCam team.</li>
-<li>We will see how the data is used for a map and how it will be made available for local authorities, either through the Digital Land platform and/or through the data repository that the OxCam team intend to create for the Arc.</li>
+<li>I want an open approach to commissioning evidence base studies and their foundational data</li>
+<li>I need a clear understanding of the minimum requirements for an evidence base study, so that I know what to commission and prepare for examination</li>
+<li>I need to easily find standardised data that is relevant to the evidence base study I am working on</li>
+<li>I need to be able to download data in a format that I am able to use</li>
+<li>I need to be able to see spatial data visualised so that I can better understand the data</li>
+<li>I need to know how my data needs to be formatted so that it can be easily uploaded and shared with others</li>
+<li>I need to know what data is needed so that I can quickly upload and share it in the right formats</li>
 </ul>
-
-    
-    <h2 class="govuk-heading-l">Updates</h2>
-    <ol id="updates" class="dl-timeline dl-timeline--with-starter-label">
-      
-      
-      
-<li class="dl-timeline__entry">
-    <h3 class="govuk-heading-s dl-timeline__entry-heading">Published sprint notes – 2021-10-19</h3>
-    <p class="dl-timeline__entry-details govuk-body-s">
-      <span>2021-10-19</span>
-      <span class="govuk-tag govuk-tag--grey">update</span>
-      
-    </p>
-    <div class="dl-timeline__entry__content">
-    <p class="govuk-body">The OxCam Unit in MHCLG have published their <a href="2021-10-19">sprint notes</a> on 19 October 2021.</p></div>
-</li>
-
-      
-      
-      
-<li class="dl-timeline__entry">
-    <h3 class="govuk-heading-s dl-timeline__entry-heading">Published sprint notes</h3>
-    <p class="dl-timeline__entry-details govuk-body-s">
-      <span>2021-08-12</span>
-      <span class="govuk-tag govuk-tag--grey">update</span>
-      
-    </p>
-    <div class="dl-timeline__entry__content">
-    <p class="govuk-body">The OxCam Unit in MHCLG have published their first set of <a href="2021-08-12">sprint notes</a>.</p></div>
-</li>
-
-      
-      <li class="dl-timeline__start-label">
-        <h4 class="govuk-heading-s">Started</h4>
-      </li>
-    </ol>
-    
-
+<h3 class="govuk-heading-m" id="as-a-dluhc-planner-in-the-oxcam-unit">As a DLUHC planner in the OxCam Unit:</h3>
+<ul class="govuk-list govuk-list--bullet">
+<li>I need to know what data exists at a Local Plan level, so I can input that into the Arc’s strategic goals</li>
+</ul>
+<h2 class="govuk-heading-l" id="prototyping">Prototyping</h2>
+<p class="govuk-body">We designed four prototypes that sought to explore our assumptions about what users might find valuable. We looked at different stages of the evidence base production process:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>How central government currently provides guidance on what data should be included in evidence base studies;</li>
+<li>A data repository for the OxCam Arc where evidence base data would be published and accessed;</li>
+<li>A catalogue of evidence base studies for the OxCam Arc; and</li>
+<li>A place where methodologies for evidence base studies for the OxCam Arc can be accessed.</li>
+</ul>
+<p class="govuk-body"><a href="https://res.cloudinary.com/digital-land/image/upload/v1634804463/prototype-iterations_vws7j3.jpg" title="Prototype iterations"><img class="dl-image"  src="https://res.cloudinary.com/digital-land/image/upload/v1634804463/prototype-iterations_vws7j3.jpg" alt="Prototype iterations"></a></p>
+<p class="govuk-body">Testing with users enabled us to challenge our assumptions and iterate our prototypes, building more detail to further test with users. Through feedback from users, there was little evidence that the methodologies and study catalogues would be of value to users. We therefore focused our prototyping on a digital service that enabled DLUHC planners to provide guidance on what data local authorities should collect and publish for a given evidence base study.</p>
+<p class="govuk-body">We also further iterated our designs for an evidence base data repository for the OxCam Arc, which would allow local authorities to upload the data they have collected, as well as search data collected by other local authorities.</p>
+<p class="govuk-body">Testing these final two prototypes demonstrated the importance of incentives to local authority users. Why would they conform to the guidance? What incentives would they have to upload their data? Planners are used to following guidance when delivering their work, and it is only a small logical extension to guide them on what data to collect for their evidence base production. However, when it comes to uploading data, the main driver cited by users would be if the Planning Inspectorate required them to do so, as part of examinations, currently something not required.</p>
+<h2 class="govuk-heading-l" id="service-vision">Service vision</h2>
+<p class="govuk-body">The results from our user testing enabled us to create a broader service vision, which started with a ‘prepare data’ service, linking to an ‘upload and search data’ service, which itself links to an ‘assess data’ service, as shown below.</p>
+<p class="govuk-body"><a href="https://res.cloudinary.com/digital-land/image/upload/v1634804463/service-vision_cvljtf.jpg" title="Service vision"><img class="dl-image"  src="https://res.cloudinary.com/digital-land/image/upload/v1634804463/service-vision_cvljtf.jpg" alt="Service vision"></a></p>
+<p class="govuk-body">The ‘Prepare Evidence Base Data’ service is primarily a new service for Local Authority planners in the OxCam Arc and DLUHC planners, to be tested at beta.</p>
+<p class="govuk-body">The service helps planners design and commission evidence base study data in a consistent way, so that it is findable and usable across different local planning authorities in the OxCam Arc. The service helps planners design and commission studies by providing authoritative guidance on which data needs to be collected and how it should be published.</p>
+<h2 class="govuk-heading-l" id="next-steps">Next steps</h2>
+<p class="govuk-body">Watch this space to see the progression of this work and please get in touch with the <a href="mailto:oxford-cambridgearc@communities.gov.uk">OxCam Unit at DLUHC</a>, should you wish to chat about any of this work.</p>
   </div>
-  <div class="govuk-grid-column-one-third"></div>
 </div>
 
 
@@ -227,7 +219,6 @@
     <h3 class="feedback-panel__heading">Help improve this page</h3>
     <p>If you’ve got a question, idea or suggestion share it with the digital land team on <a href="https://github.com/digital-land/design-system">github</a> or email us on <a href="mailto:DigitalLand@communities.gov.uk">digitalland@communities.gov.uk</a></p>
 </div>
-
 
 
         </main>
