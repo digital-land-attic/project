@@ -298,14 +298,14 @@
 <li><strong>MHCLG index:</strong> a website that allows reusers of the data to explore and download the data they need.</li>
 </ul>
 <p class="govuk-body">More detail on each of the components of this model is explored in subsequent sections.</p>
-<h4 class="govuk-heading-s">Planning authority implementation options</h4>
+<h4 class="govuk-heading-s" id="planning-authority-implementation-options">Planning authority implementation options</h4>
 <p class="govuk-body">The proposed technical model includes decentralised publication of the data. This is preferable chiefly because local planning authorities are the custodians of the data. It is their planning officers who manage it, albeit indirectly via their management of the planning process. Through local publication, the data feed can be conceptualised as just an extension to the existing, statutorily defined local planning registers.</p>
 <p class="govuk-body">However, we identified in our discovery work that planning authorities are very varied in the technical skills and resources they have access to, so implementation options need to be presented that require minimal technical work, but also give flexibility to those planning authorities with more skills or who wish to publish their feeds via existing systems such as data portals. Two options that together accomplish this are described below.</p>
-<h4 class="govuk-heading-s">Product add-ons</h4>
+<h4 class="govuk-heading-s" id="product-add-ons">Product add-ons</h4>
 <p class="govuk-body">The large majority of planning authorities use a back office management system that allows them to manage their planning applications while also presenting a public facing interface for searching and browsing applications.</p>
 <p class="govuk-body">Given their access to the market, existing infrastructure and support functions, we would recommend working with these suppliers to help them develop add-ons or modules that extend the existing local planning registers with a feed of structured data accessible at a fixed URL.</p>
 <p class="govuk-body">This approach would make it easy for planning authorities without the technical skills, resources or time necessary to set up their own feeds to meet the requirement of publishing a feed.</p>
-<h4 class="govuk-heading-s">Data publishing tools</h4>
+<h4 class="govuk-heading-s" id="data-publishing-tools">Data publishing tools</h4>
 <p class="govuk-body">For planning authorities who have access to technical skills and resources, they could instead opt to publish a data feed themselves via an open data platform or another data publishing tool.</p>
 <p class="govuk-body">We recommend allowing this flexibility as some local authorities have existing approaches to open data that should not be disrupted.</p>
 <p class="govuk-body">Many of the planning authorities we spoke to as part of our initial research were already publishing planning application data. All of them followed the same basic technical approach, but with slightly different implementations based on the technology available to them. Here are three of these examples:</p>
@@ -314,9 +314,9 @@
 <li><strong>Leeds City Council</strong> use Microsoft Access to do reporting on their Idox Uniform system, by automatically pulling data from Uniform’s database into Access. They have written a scheduled task in Access that extracts the relevant data from the Access database and generates a CSV file of new planning application data in line with the LGA schema. The task also sends an email to the team at Datamill North (an open data portal started by Leeds City Council, but now shared with Bradford City Council) to let them know a new version of the dataset is available. The Datamill team then manually update the dataset with the new data.</li>
 <li><strong>Reigate and Banstead Council</strong> make a planning application data feed available in line with the LGA schema via data.gov.uk. They use a GIS data publishing platform to query their Idox system’s underlying database and pull the data through into a Postgres database. They then use XSL stylesheets to transpose this data into an XML web feed, also hosted through the same GIS data publishing platform.</li>
 </ul>
-<h4 class="govuk-heading-s">MHCLG technology</h4>
+<h4 class="govuk-heading-s" id="mhclg-technology">MHCLG technology</h4>
 <p class="govuk-body">To enable this ecosystem of planning application data to work best for data users, MHCLG will need to create some technology that can aggregate the data together and present it through a single interface.</p>
-<h4 class="govuk-heading-s">Central collector</h4>
+<h4 class="govuk-heading-s" id="central-collector">Central collector</h4>
 <p class="govuk-body">A central collector, as shown in the technical model diagram above, would act to bring together the distributed data feeds, unifying them into a single common data feed with a consistent schema.</p>
 <p class="govuk-body">The central collector would have the following other components:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -325,7 +325,7 @@
 <li><strong>Feed validator:</strong> the collector would also need to validate feed data as it collects it. This would almost certainly have to happen at the same time as translation. The validator would check the feed against the common schema and would need to notify the custodian of the feed of any errors or inconsistencies in the data.</li>
 </ul>
 <p class="govuk-body">The functionality of this collector would need to be further prototyped and tested in a future project.</p>
-<h4 class="govuk-heading-s">Central index</h4>
+<h4 class="govuk-heading-s" id="central-index">Central index</h4>
 <p class="govuk-body">The central index, also shown in the technical model above, would take the data sourced by the collector and expose it through user interface to allow</p>
 <p class="govuk-body">The central index itself was not a focus of this project and its functionality would need to be further explored, prototyped and tested in a future project. But based on our research with data users, we know it would need to have these characteristics:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -339,7 +339,7 @@
 <h3 class="govuk-heading-m" id="potential-interventions">Potential interventions</h3>
 <p class="govuk-body">As well as the technical model and components described above, a number of other changes or interventions would need to be made to the system of planning application data to make sure the data can be sourced from all planning authorities in accordance with the identified user needs.</p>
 <p class="govuk-body">A diagram outlining the flow of planning application data, annotated with where interventions would need to be made,  is shown below.</p>
-<h4 class="govuk-heading-s">Process</h4>
+<h4 class="govuk-heading-s" id="process">Process</h4>
 <p class="govuk-body">The process shown in the diagram is as follows:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><strong>Submission:</strong> an applicant submits their application, most commonly through the Planning Portal, but sometimes via another submission portal like iApply or in person to a planning officer. Submissions from a portal are emailed to a local authority along with an XML file describing the application and PDF documents containing the details. Normally, this XML is processed automatically by the back office management system and imported for validation by a planning officer.</li>
@@ -347,7 +347,7 @@
 <li><strong>Consultation &amp; decision:</strong> following validation, comment is sought from relevant consultees and from the public. Documents received are added to the application by the planning officer. The application is reviewed in light of the comments, constraints and other relevant consideration and a decision is made by the planning officer, local planning committee or Secretary of State.</li>
 <li><strong>Publication:</strong> after an application has been validated, it will be published on the planning authority’s local planning register. As further detailed are added during consultation and decision, the application page will be continually updated. Some planning authorities also publish a feed of data with new applications and newly updated applications.</li>
 </ul>
-<h4 class="govuk-heading-s">Interventions</h4>
+<h4 class="govuk-heading-s" id="interventions">Interventions</h4>
 <p class="govuk-body">The interventions we recommend MHCLG consider making are described below:</p>
 <ol class="govuk-list govuk-list--number">
 <li><strong>Collect data on development at the start of the process:</strong> require more data on the nature of the development from the applicant and require portals to alter forms to collect this additional data. This would involve collecting the use class/floorspace fields and bedroom data described in our data pattern.</li>
@@ -366,19 +366,19 @@
 <p class="govuk-body">This section of the report describes what this further work should seek to achieve. It starts by describing some outstanding questions that need to be answered by this work and then outlines some aspects of a recommended approach to testing them.</p>
 <h3 class="govuk-heading-m" id="questions-to-answer">Questions to answer</h3>
 <p class="govuk-body">The work completed has given us a clear sense of what we know and what do not yet know, but need to know. The questions that need to be answered in a further phase of work are stated below, grouped by theme.</p>
-<h4 class="govuk-heading-s">Data pattern</h4>
+<h4 class="govuk-heading-s" id="data-pattern">Data pattern</h4>
 <ul class="govuk-list govuk-list--bullet">
 <li>How will the data pattern be applied to different submission types and consent regimes?</li>
 <li>Should the data pattern be applied differently to existing, decided applications and live and future applications?</li>
 <li>Does data released in line with the data pattern solve the problem of tying related submissions together?</li>
 </ul>
-<h4 class="govuk-heading-s">Management of data</h4>
+<h4 class="govuk-heading-s" id="management-of-data">Management of data</h4>
 <ul class="govuk-list govuk-list--bullet">
 <li>How much additional time will it take a planning officer to manage the fields describing a development?</li>
 <li>What governance model should be put in place to help ensure the reliability of a data feed and the accuracy of its content?</li>
 <li>What other opportunities does having this data available present for planning authorities and MHCLG?</li>
 </ul>
-<h4 class="govuk-heading-s">Data feed</h4>
+<h4 class="govuk-heading-s" id="data-feed">Data feed</h4>
 <ul class="govuk-list govuk-list--bullet">
 <li>Is it possible for planning authorities to consistently extract all of the data required by the pattern?</li>
 <li>Are the connections between planning and geographical information systems always present that will allow the extraction of UPRNs and site polygons?</li>
@@ -386,19 +386,19 @@
 <li>Can recipes for extraction and publication be shared across local authorities?</li>
 <li>What are the licensing issues with geographical data going to be in practice?</li>
 </ul>
-<h4 class="govuk-heading-s">Other technology</h4>
+<h4 class="govuk-heading-s" id="other-technology">Other technology</h4>
 <ul class="govuk-list govuk-list--bullet">
 <li>Is a validator/translator tool workable with real data, and is an interface to specify the translation usable by planning authority officers?</li>
 <li>What are the technical challenges that suppliers might face in providing this feed for their customers?</li>
 </ul>
-<h4 class="govuk-heading-s">Policy/legal approach</h4>
+<h4 class="govuk-heading-s" id="policylegal-approach">Policy/legal approach</h4>
 <ul class="govuk-list govuk-list--bullet">
 <li>What is the right way of incentivising or requiring planning authorities to provide this feed?</li>
 <li>How can MHCLG support planning authorities in dealing with their tech suppliers?</li>
 </ul>
 <h3 class="govuk-heading-m" id="approach">Approach</h3>
 <p class="govuk-body">To answer these questions, we think the next phase of work should have three focuses: piloting the data pattern with planning authorities, working with a wider range of suppliers on technical feasibility and an operational model, and prototyping and testing of additional technical components.</p>
-<h4 class="govuk-heading-s">Piloting the data pattern with planning authorities</h4>
+<h4 class="govuk-heading-s" id="piloting-the-data-pattern-with-planning-authorities">Piloting the data pattern with planning authorities</h4>
 <p class="govuk-body">Many of the questions above could be answered through a complete pilot with a group of planning authorities. Given the time commitment this would involve from them, it may require some kind of incentive to ensure their participation.</p>
 <p class="govuk-body">Their participation would involve:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -422,7 +422,7 @@
 <li>The authorities should be using a mix of different back office management systems.</li>
 <li>Both planning and technical staff from the authorities would need to be involved.</li>
 </ul>
-<h4 class="govuk-heading-s">Working with suppliers</h4>
+<h4 class="govuk-heading-s" id="working-with-suppliers">Working with suppliers</h4>
 <p class="govuk-body">To ensure the long term sustainability of this work and minimise the technical burden on planning authorities, it is important to work with the suppliers of back office systems.</p>
 <p class="govuk-body">As part of the work already completed, we had conversations with two of the largest back office planning application system providers to understand how they model data, what data export capabilities they have and to get their feedback on the proposed data pattern.</p>
 <p class="govuk-body">Ideally, the planning authorities involved in the pilot should have systems provided by a few different back office system suppliers.</p>
@@ -432,7 +432,7 @@
 <li>Explore the policy options and incentives to ensure the development of an additional data feed capability for their systems.</li>
 <li>Develop a prototype feed or export capability to test the feasibility of the data pattern and schema.</li>
 </ul>
-<h4 class="govuk-heading-s">Prototyping</h4>
+<h4 class="govuk-heading-s" id="prototyping">Prototyping</h4>
 <p class="govuk-body">Along with the pilot work, some prototyping work could be completed to test out some technical components of the whole system described in the technical model above.</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><strong>The central collector</strong> and in particular the translator/validator part of it, could be further developed, using the real data obtained from planning authorities in the pilot. It could be tested with planning authority staff to understand whether they could do the translation themselves or whether this work would have to be done centrally by MHCLG.</li>
