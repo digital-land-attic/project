@@ -1,14 +1,14 @@
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 DOCS_DIR=./docs/
 
-init:
-	pip install --upgrade -r requirements.txt
-
 render: updates render-pages copy-img
 	
 render-pages::
 	mkdir -p docs
 	python3 render.py
+
+init:
+	pip install --upgrade -r requirements.txt
 
 	
 clean::
