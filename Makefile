@@ -8,7 +8,7 @@ render-pages::
 	python3 render.py
 
 init:
-	pip install --upgrade -r requirements.txt
+	pip install -r requirements.txt
 
 	
 clean::

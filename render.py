@@ -3,7 +3,8 @@
 import os
 import markdown
 
-from frontmatter import Frontmatter
+import frontmatter
+
 from bin.jinja_setup import env, render
 from bin.helpers import read_in_json
 from digital_land_frontend.filters import make_link
@@ -35,13 +36,13 @@ env.filters["markdown"] = markdown_filter
 
 
 def get_project_content(filename):
-    file_content = Frontmatter.read_file(filename)
+    file_content = frontmatter.load(filename)
     return {
-        "name": file_content["attributes"].get("name"),
-        "status": file_content["attributes"].get("status"),
-        "description": file_content["attributes"].get("one-liner"),
-        "frontmatter": file_content["attributes"],
-        "body": file_content["body"],
+        "name": file_content.metadata.get("name"),
+        "status": file_content.metadata.get("status"),
+        "description": file_content.metadata.get("one-liner"),
+        "frontmatter": file_content.metadata,
+        "body": file_content.content,
     }
 
 
@@ -81,26 +82,26 @@ def render_project_content_pages(project):
     content_dir = f"{project_dir}{project}/content"
     md_files = markdown_files_only(os.listdir(content_dir))
     for f in md_files:
-        file_content = Frontmatter.read_file(f"{content_dir}/{f}")
-        html = compile_markdown(md, file_content["body"])
+        file_content =  frontmatter.load(f"{content_dir}/{f}")
+        html = compile_markdown(md, file_content.content)
         render(
             f"{project}/{f.replace('.md', '')}/index.html",
             content_template,
             content=html,
             toc=md.toc_tokens,
-            fm=file_content["attributes"],
+            fm=file_content.metadata,
             project=project,
         )
 
 
 def get_update_content(filename):
-    file_content = Frontmatter.read_file(filename)
+    file_content = frontmatter.load(filename)
     return {
-        "name": file_content["attributes"].get("name"),
-        "type": file_content["attributes"].get("type"),
-        "date": file_content["attributes"].get("date"),
-        "frontmatter": file_content["attributes"],
-        "body": file_content["body"],
+        "name": file_content.metadata.get("name"),
+        "type": file_content.metadata.get("type"),
+        "date": file_content.metadata.get("date"),
+        "frontmatter": file_content.metadata,
+        "body": file_content.content,
     }
 
 
